@@ -31,3 +31,5 @@ next-env.d.ts
 # Prisma & SQLite local
 prisma/*.db
 prisma/*.db-journal
+
+.vercel

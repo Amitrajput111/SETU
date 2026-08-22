@@ -12,7 +12,7 @@
 
 ## 🚀 Live Demo & Overview
 
-- **Live URL**: [https://setugrowth.vercel.app](https://setugrowth.vercel.app) *(or your deployed Vercel URL)*
+- **Live Production URL**: [https://setu-platform-rust.vercel.app](https://setu-platform-rust.vercel.app)
 - **Repository**: [https://github.com/Amitrajput111/SETU](https://github.com/Amitrajput111/SETU)
 
 ---
