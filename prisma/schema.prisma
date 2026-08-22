@@ -1,0 +1,69 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Lead {
+  id               String   @id @default(cuid())
+  businessName     String
+  businessType     String
+  contactPerson    String?
+  phone            String
+  email            String
+  website          String?
+  instagram        String?
+  googleBusiness   String?
+  location         String?
+  goal             String?
+  budget           String?
+  message          String?
+  source           String   @default("AUDIT") // AUDIT, CONTACT, DIRECT
+  status           String   @default("NEW")   // NEW, CONTACTED, QUALIFIED, PROPOSAL, WON, LOST
+  auditScore       Int?
+  notes            String?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}
+
+model AuditSubmission {
+  id               String   @id @default(cuid())
+  businessName     String
+  businessType     String
+  websiteUrl       String?
+  instagramHandle  String?
+  googleMapsUrl    String?
+  city             String
+  whatsappNumber   String
+  emailAddress     String
+  primaryChallenge String
+  targetTimeline   String?
+  monthlyBudget    String?
+  additionalNotes  String?
+  status           String   @default("PENDING_REVIEW")
+  createdAt        DateTime @default(now())
+}
+
+model ContactSubmission {
+  id           String   @id @default(cuid())
+  fullName     String
+  email        String
+  phone        String
+  businessName String?
+  serviceNeeded String?
+  message      String
+  status       String   @default("NEW")
+  createdAt    DateTime @default(now())
+}
+
+model AnalyticsEvent {
+  id        String   @id @default(cuid())
+  eventType String
+  eventName String
+  metadata  String?
+  ipHash    String?
+  createdAt DateTime @default(now())
+}
