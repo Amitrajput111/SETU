@@ -78,7 +78,7 @@ export const LiveDemosSection: React.FC = () => {
   };
 
   return (
-    <section className="py-20 sm:py-28 bg-[#F8FAFC] border-b border-slate-200/80" id="work">
+    <section className="py-20 sm:py-28 bg-[#F8FAFC] border-b border-slate-200/80 scroll-mt-16 sm:scroll-mt-20" id="work">
       <Container size="xl">
         {/* Section Header with Slide Controls */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">

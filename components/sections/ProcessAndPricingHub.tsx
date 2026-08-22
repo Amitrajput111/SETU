@@ -112,7 +112,7 @@ export const ProcessAndPricingHub: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 sm:py-28 bg-[#F8FAFC] border-b border-slate-200/80" id="process-pricing">
+    <section className="py-20 sm:py-28 bg-[#F8FAFC] border-b border-slate-200/80 scroll-mt-16 sm:scroll-mt-20" id="pricing">
       <Container size="xl">
         {/* Top Centered Switcher */}
         <div className="max-w-3xl mx-auto text-center space-y-4 mb-12">

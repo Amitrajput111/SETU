@@ -33,7 +33,7 @@ export const IndustriesSection: React.FC = () => {
   };
 
   return (
-    <section className="py-20 sm:py-28 bg-white border-b border-slate-200/80" id="industries">
+    <section className="py-20 sm:py-28 bg-white border-b border-slate-200/80 scroll-mt-16 sm:scroll-mt-20" id="industries">
       <Container size="xl">
         <SectionHeading
           eyebrow="Industry Blueprints"

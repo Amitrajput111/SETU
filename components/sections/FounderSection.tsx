@@ -6,7 +6,7 @@ import { Linkedin, Github, ArrowRight, CheckCircle2 } from "lucide-react";
 
 export const FounderSection: React.FC = () => {
   return (
-    <section className="py-20 sm:py-28 bg-[#F8FAFC] border-b border-slate-200/80" id="about">
+    <section className="py-20 sm:py-28 bg-[#F8FAFC] border-b border-slate-200/80 scroll-mt-16 sm:scroll-mt-20" id="about">
       <Container size="xl">
         <div className="bg-white rounded-2xl border border-slate-200/90 shadow-sm p-6 sm:p-10 lg:p-12 max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
