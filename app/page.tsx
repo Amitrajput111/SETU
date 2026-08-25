@@ -1,6 +1,5 @@
 import React from "react";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { TrustTechSection } from "@/components/sections/TrustTechSection";
 import { ServicesGrid } from "@/components/sections/ServicesGrid";
 import { LiveDemosSection } from "@/components/sections/LiveDemosSection";
 import { IndustriesSection } from "@/components/sections/IndustriesSection";
@@ -16,31 +15,28 @@ export default function HomePage() {
       {/* 01. Two-Column Hero with Live Interactive System Visual */}
       <HeroSection />
 
-      {/* 02. Trust & Modern Capabilities Strip */}
-      <TrustTechSection />
-
-      {/* 03. Core Services (5 Clean Capabilities with UI Previews) */}
+      {/* 02. Core Services (5 Clean Capabilities with 2s Auto-Sliding UI Previews) */}
       <ServicesGrid />
 
-      {/* 04. Featured Work (3 Concept Project Teardowns) */}
+      {/* 03. Featured Work (3 Concept Project Live Demos with 2s Continuous Slider) */}
       <LiveDemosSection />
 
-      {/* 05. Industry Blueprints (Healthcare, Fitness, Education) */}
+      {/* 04. Industry Blueprints (Healthcare, Fitness, Education) */}
       <IndustriesSection />
 
-      {/* 06. Interactive ROI & Business Growth Estimator */}
+      {/* 05. Interactive ROI & Business Growth Estimator */}
       <RoiCalculator />
 
-      {/* 07. 5-Stage Process & Transparent Pricing Packages */}
+      {/* 06. 5-Stage Process & Transparent Pricing Packages */}
       <ProcessAndPricingHub />
 
-      {/* 08. About SETU & Engineering Leadership */}
+      {/* 07. About SETU & Engineering Leadership */}
       <FounderSection />
 
-      {/* 09. Frequently Asked Questions */}
+      {/* 08. Frequently Asked Questions */}
       <FAQSection />
 
-      {/* 10. Final Action Banner */}
+      {/* 09. Final Action Banner */}
       <FinalCTASection />
     </>
   );
