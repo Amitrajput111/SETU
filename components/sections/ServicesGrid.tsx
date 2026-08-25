@@ -117,13 +117,13 @@ export const ServicesGrid: React.FC = () => {
     },
   ];
 
-  // Auto-sliding 5s timer
+  // Auto-sliding 2-second timer
   useEffect(() => {
     if (isPaused) return;
 
     timerRef.current = setInterval(() => {
       setActiveTab((prev) => (prev === services.length - 1 ? 0 : prev + 1));
-    }, 5000);
+    }, 2000);
 
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
@@ -216,7 +216,7 @@ export const ServicesGrid: React.FC = () => {
             <div
               key={activeTab}
               className={cn(
-                "h-full bg-brand-accent transition-all duration-[5000ms] ease-linear",
+                "h-full bg-brand-accent transition-all duration-[2000ms] ease-linear",
                 isPaused ? "opacity-40" : "w-full"
               )}
               style={{ width: isPaused ? "100%" : undefined }}
@@ -224,7 +224,7 @@ export const ServicesGrid: React.FC = () => {
           </div>
 
           <div
-            className="flex transition-transform duration-700 ease-in-out"
+            className="flex transition-transform duration-500 ease-in-out"
             style={{ transform: `translateX(-${activeTab * 100}%)` }}
           >
             {services.map((service) => (

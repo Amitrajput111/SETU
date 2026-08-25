@@ -43,7 +43,7 @@ export const HeroSection: React.FC = () => {
       icon: <Activity className="w-3.5 h-3.5" />,
       title: "CARE CLINIC — Healthcare Portal",
       displayUrl: "careclinic-indore.vercel.app",
-      imageSrc: "/images/projects/dental-clinic.jpg",
+      imageSrc: "/images/projects/care-clinic.jpg",
       highlight: "-68% No-Shows",
       summary: "Transparent doctor consultation fees with 24/7 automated WhatsApp slot booking.",
       liveUrl: "https://client-wheat-seven-38.vercel.app/",
@@ -72,13 +72,13 @@ export const HeroSection: React.FC = () => {
     },
   ];
 
-  // Auto-sliding 5s timer
+  // Auto-sliding 2-second timer
   useEffect(() => {
     if (isPaused) return;
 
     timerRef.current = setInterval(() => {
       setActiveTab((prev) => (prev === previewTabs.length - 1 ? 0 : prev + 1));
-    }, 5000);
+    }, 2000);
 
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
@@ -173,7 +173,7 @@ export const HeroSection: React.FC = () => {
                 </div>
 
                 <span className="text-[10px] font-mono text-teal-400 hidden sm:inline shrink-0 pr-1">
-                  {isPaused ? "Paused" : "Auto"}
+                  {isPaused ? "Paused" : "2s Auto"}
                 </span>
               </div>
 
@@ -182,7 +182,7 @@ export const HeroSection: React.FC = () => {
                 <div
                   key={activeTab}
                   className={cn(
-                    "h-full bg-teal-400 transition-all duration-[5000ms] ease-linear",
+                    "h-full bg-teal-400 transition-all duration-[2000ms] ease-linear",
                     isPaused ? "opacity-40" : "w-full"
                   )}
                   style={{ width: isPaused ? "100%" : undefined }}
@@ -191,7 +191,7 @@ export const HeroSection: React.FC = () => {
 
               {/* Continuous Horizontal Slider Track with Clean Browser Chrome */}
               <div
-                className="flex transition-transform duration-700 ease-in-out"
+                className="flex transition-transform duration-500 ease-in-out"
                 style={{ transform: `translateX(-${activeTab * 100}%)` }}
               >
                 {previewTabs.map((tab) => (

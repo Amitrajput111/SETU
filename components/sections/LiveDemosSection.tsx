@@ -15,7 +15,6 @@ import {
   MapPin,
   ExternalLink,
   Lock,
-  Globe,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -30,7 +29,7 @@ export const LiveDemosSection: React.FC = () => {
       category: "Healthcare & Clinic",
       title: "CARE CLINIC",
       icon: <Activity className="w-4 h-4 text-blue-500" />,
-      imageSrc: "/images/projects/dental-clinic.jpg",
+      imageSrc: "/images/projects/care-clinic.jpg",
       location: "Indore, MP",
       displayUrl: "careclinic-indore.vercel.app",
       liveDemoUrl: "https://client-wheat-seven-38.vercel.app/",
@@ -84,13 +83,13 @@ export const LiveDemosSection: React.FC = () => {
     },
   ];
 
-  // Auto-sliding 5s timer
+  // Auto-sliding 2-second timer (smooth rotation)
   useEffect(() => {
     if (isPaused) return;
 
     timerRef.current = setInterval(() => {
       setActiveIndex((prev) => (prev === projects.length - 1 ? 0 : prev + 1));
-    }, 5000);
+    }, 2000);
 
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
@@ -120,7 +119,7 @@ export const LiveDemosSection: React.FC = () => {
               <Sparkles className="w-3.5 h-3.5 text-brand-accent" />
               <span>Live Production Demos</span>
               <span className="w-1.5 h-1.5 rounded-full bg-teal-600 animate-pulse ml-1" />
-              <span className="text-[10px] text-teal-700 font-mono font-bold">Auto-Slide</span>
+              <span className="text-[10px] text-teal-700 font-mono font-bold">2s Auto-Slide</span>
             </div>
             <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
               Work that makes businesses look better — and work better.
@@ -173,12 +172,12 @@ export const LiveDemosSection: React.FC = () => {
 
         {/* Slider Card Container */}
         <div className="bg-white rounded-3xl border border-slate-200/90 shadow-card overflow-hidden">
-          {/* Animated Auto-Slide Progress Bar */}
+          {/* Animated 2s Auto-Slide Progress Bar */}
           <div className="w-full h-1 bg-slate-100 relative overflow-hidden">
             <div
               key={activeIndex}
               className={cn(
-                "h-full bg-brand-accent transition-all duration-[5000ms] ease-linear",
+                "h-full bg-brand-accent transition-all duration-[2000ms] ease-linear",
                 isPaused ? "opacity-40" : "w-full"
               )}
               style={{ width: isPaused ? "100%" : undefined }}
@@ -187,7 +186,7 @@ export const LiveDemosSection: React.FC = () => {
 
           {/* Continuous Sliding Horizontal Track */}
           <div
-            className="flex transition-transform duration-700 ease-in-out"
+            className="flex transition-transform duration-500 ease-in-out"
             style={{ transform: `translateX(-${activeIndex * 100}%)` }}
           >
             {projects.map((project) => (
@@ -332,7 +331,7 @@ export const LiveDemosSection: React.FC = () => {
             ))}
           </div>
           <span className="text-[11px] text-slate-400 font-mono">
-            {isPaused ? "(Paused on hover)" : "(Auto-sliding every 5s)"}
+            {isPaused ? "(Paused on hover)" : "(Auto-sliding every 2s)"}
           </span>
         </div>
       </Container>
