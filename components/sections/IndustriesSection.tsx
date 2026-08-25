@@ -52,8 +52,9 @@ export const IndustriesSection: React.FC = () => {
               subNiches={ind.subNiches}
               commonProblem={ind.commonProblem.points[0]}
               setuSolution={ind.setuSolution.points[0]}
-              href={`/industries#${ind.id}`}
-              ctaText={`View ${ind.badge} Blueprint`}
+              href={`/#work`}
+              liveDemoUrl={ind.liveDemoUrl}
+              ctaText={`Explore ${ind.title}`}
             />
           ))}
         </div>

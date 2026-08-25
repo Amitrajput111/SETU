@@ -11,68 +11,71 @@ import {
   CheckCircle2,
   ArrowRight,
   Sparkles,
-  MapPin,
+  ExternalLink,
 } from "lucide-react";
 import { FinalCTASection } from "@/components/sections/FinalCTASection";
 
 export const metadata: Metadata = {
   title: "Industries — Healthcare, Fitness & Education Blueprints",
   description:
-    "Tailored customer acquisition and automation blueprints for Dental Clinics, Fitness Studios, and Coaching Academies.",
+    "Tailored customer acquisition and automation blueprints for Healthcare Clinics, Fitness Clubs, and Coaching Academies.",
 };
 
 export default function IndustriesPage() {
   const industries = [
     {
       id: "healthcare",
-      category: "Healthcare & Dental",
-      title: "Dental & Healthcare Clinics",
+      category: "Healthcare & Clinics",
+      title: "CARE CLINIC — Healthcare & Clinics",
       icon: <Activity className="w-5 h-5 text-blue-500" />,
-      tagline: "High-trust clinical web app with zero patient no-shows & transparent treatment pricing.",
+      tagline: "High-trust clinical web app with zero patient no-shows & transparent doctor consultation fees.",
       imageSrc: "/images/industries/healthcare.jpg",
-      subNiches: ["Dental Clinics", "Dermatology", "Eye Clinics", "Physiotherapy Centers"],
+      liveDemoUrl: "https://client-wheat-seven-38.vercel.app/",
+      subNiches: ["Dental Clinics", "Dermatology", "Cardiology", "Pediatrics", "Orthopedics"],
       bullets: [
-        "Transparent dental treatment pricing estimator that answers patient cost questions upfront",
+        "Transparent doctor consultation fee schedules that answer patient cost questions upfront",
         "24/7 automated WhatsApp appointment booking with live doctor slot selector",
         "Google Maps top 3 local pack ranking and automated 5-star review collection",
         "Automated 24h & 2h WhatsApp appointment reminders to eliminate patient no-shows",
       ],
       outcome: "-68% Appointment No-Shows · #1 Google Maps in 10km",
-      workRef: "apex-smile-dental",
+      workRef: "care-clinic",
     },
     {
       id: "fitness",
-      category: "Fitness & Studios",
-      title: "Fitness Studios & Gyms",
+      category: "Fitness & Wellness",
+      title: "AURA FITNESS — Luxury Gyms & Clubs",
       icon: <Flame className="w-5 h-5 text-teal-500" />,
       tagline: "High-conversion athletic studio portal with instant 1-Day VIP Trial Pass funnels.",
       imageSrc: "/images/industries/fitness.jpg",
-      subNiches: ["Strength & Conditioning", "Yoga & Pilates", "CrossFit Boxes", "Martial Arts"],
+      liveDemoUrl: "https://gym-web-demo-beta.vercel.app/",
+      subNiches: ["Strength & Conditioning", "Luxury Health Clubs", "Personal Training", "Recovery"],
       bullets: [
         "Live weekly trainer class schedule and interactive timetable with slot reservation",
-        "Instant 1-Day Trial Pass generator delivering QR codes directly on WhatsApp",
+        "Instant 1-Day VIP Trial Pass generator delivering QR codes directly on WhatsApp",
         "High-trust member transformation carousels and verified trainer bio cards",
         "Automated membership renewal triggers and referral rewards on WhatsApp",
       ],
       outcome: "+4.8x VIP Passes Claimed · 142 Active Monthly Members",
-      workRef: "elevate-fitness-studio",
+      workRef: "aura-fitness",
     },
     {
       id: "education",
       category: "Education & Coaching",
-      title: "Coaching Institutes & Academies",
+      title: "EduRise Academy — Coaching & Test Prep",
       icon: <GraduationCap className="w-5 h-5 text-indigo-500" />,
-      tagline: "Admissions growth engine for competitive JEE/NEET & test-prep institutes.",
+      tagline: "Admissions growth engine for premier JEE, NEET & Foundation coaching institutes.",
       imageSrc: "/images/industries/education.jpg",
-      subNiches: ["JEE / NEET Coaching", "Language Academies", "Skill Bootcamps", "Test Prep"],
+      liveDemoUrl: "https://edurise-js16rxcct-amitrajput111s-projects.vercel.app/",
+      subNiches: ["JEE / NEET Coaching", "Foundation Batches", "Scholarship Tests", "Test Prep"],
       bullets: [
         "Verified top rankers results gallery and faculty credential profiles",
         "Instant WhatsApp prospectus & fee structure PDF delivery in under 5 seconds",
-        "Online demo lecture seat reservation with instant SMS confirmation to parents",
+        "Online demo lecture seat reservation with instant confirmation to parents",
         "Counselor notification alerts for immediate follow-up on high-intent inquiries",
       ],
       outcome: "5-Second Prospectus Speed · +84% Demo Lecture Attendance",
-      workRef: "shikhar-learning-academy",
+      workRef: "edurise",
     },
   ];
 
@@ -90,7 +93,7 @@ export default function IndustriesPage() {
               Tailored Customer Engines for High-Intent Verticals
             </h1>
             <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
-              A dental clinic has different conversion bottlenecks than a fitness studio or coaching institute. Explore systems tailored to each vertical.
+              A healthcare clinic has different conversion bottlenecks than a luxury gym or coaching institute. Explore systems tailored to each vertical.
             </p>
 
             {/* Jump Pills */}
@@ -101,7 +104,7 @@ export default function IndustriesPage() {
                   href={`#${ind.id}`}
                   className="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 transition-colors"
                 >
-                  {ind.title}
+                  {ind.title.split("—")[0]}
                 </a>
               ))}
             </div>
@@ -132,7 +135,7 @@ export default function IndustriesPage() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-black/20 pointer-events-none" />
 
-                    <div className="absolute top-4 left-4 z-10">
+                    <div className="absolute top-4 left-4 z-10 flex items-center gap-2">
                       <span className="text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-md bg-slate-950/80 backdrop-blur-xs text-teal-300 border border-teal-500/30">
                         {ind.category} Blueprint
                       </span>
@@ -142,9 +145,15 @@ export default function IndustriesPage() {
                       <span className="font-semibold text-teal-300">
                         {ind.title}
                       </span>
-                      <span className="text-[11px] text-slate-300">
-                        Verified Blueprint
-                      </span>
+                      <a
+                        href={ind.liveDemoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 text-[11px] text-teal-300 hover:text-white underline"
+                      >
+                        <span>Open Live Demo</span>
+                        <ExternalLink className="w-3 h-3" />
+                      </a>
                     </div>
                   </div>
 
@@ -152,13 +161,24 @@ export default function IndustriesPage() {
                   <div className="lg:col-span-6 p-7 sm:p-10 flex flex-col justify-between space-y-6 bg-slate-50/40">
                     <div className="space-y-4">
                       <div>
-                        <div className="flex items-center gap-2 mb-2">
-                          <span className="p-1.5 rounded-lg bg-white border border-slate-200 shadow-xs">
-                            {ind.icon}
-                          </span>
-                          <span className="text-xs font-bold text-brand-accent uppercase tracking-wider">
-                            {ind.category}
-                          </span>
+                        <div className="flex items-center justify-between gap-2 mb-2">
+                          <div className="flex items-center gap-2">
+                            <span className="p-1.5 rounded-lg bg-white border border-slate-200 shadow-xs">
+                              {ind.icon}
+                            </span>
+                            <span className="text-xs font-bold text-brand-accent uppercase tracking-wider">
+                              {ind.category}
+                            </span>
+                          </div>
+                          <a
+                            href={ind.liveDemoUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-teal-50 hover:bg-teal-100 text-teal-800 text-xs font-bold border border-teal-200 transition-colors"
+                          >
+                            <span>Live Demo</span>
+                            <ExternalLink className="w-3 h-3" />
+                          </a>
                         </div>
                         <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
                           {ind.title}
@@ -201,14 +221,15 @@ export default function IndustriesPage() {
 
                     {/* Action Buttons */}
                     <div className="pt-4 border-t border-slate-200/80 flex items-center justify-between gap-3">
-                      <Button
-                        variant="primary"
-                        size="sm"
-                        href={`/work#${ind.workRef}`}
-                        rightIcon={<ArrowRight className="w-3.5 h-3.5" />}
+                      <a
+                        href={ind.liveDemoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold shadow-xs transition-colors"
                       >
-                        View Live Concept
-                      </Button>
+                        <span>Open Live Demo</span>
+                        <ExternalLink className="w-3.5 h-3.5" />
+                      </a>
 
                       <Button
                         variant="accent"

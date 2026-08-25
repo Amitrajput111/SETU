@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, AlertCircle, CheckCircle2 } from "lucide-react";
+import { ArrowRight, AlertCircle, CheckCircle2, ExternalLink } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export interface IndustryCardProps {
@@ -13,6 +13,7 @@ export interface IndustryCardProps {
   commonProblem: string;
   setuSolution: string;
   href: string;
+  liveDemoUrl?: string;
   ctaText?: string;
   className?: string;
 }
@@ -26,6 +27,7 @@ export const IndustryCard: React.FC<IndustryCardProps> = ({
   commonProblem,
   setuSolution,
   href,
+  liveDemoUrl,
   ctaText = "View Industry Blueprint",
   className,
 }) => {
@@ -53,11 +55,21 @@ export const IndustryCard: React.FC<IndustryCardProps> = ({
               <span className="w-2 h-2 rounded-full bg-brand-teal" />
               <span>{title}</span>
             </span>
-            {badge && (
+            {liveDemoUrl ? (
+              <a
+                href={liveDemoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[10px] font-bold px-2 py-0.5 rounded bg-teal-500/80 hover:bg-teal-500 text-white backdrop-blur-xs flex items-center gap-1 transition-colors"
+              >
+                <span>Live Demo</span>
+                <ExternalLink className="w-2.5 h-2.5" />
+              </a>
+            ) : badge ? (
               <span className="text-[10px] font-semibold px-2 py-0.5 rounded bg-white/20 backdrop-blur-xs text-white">
                 {badge}
               </span>
-            )}
+            ) : null}
           </div>
         </div>
       )}
@@ -107,8 +119,8 @@ export const IndustryCard: React.FC<IndustryCardProps> = ({
           </div>
         </div>
 
-        {/* Action Link */}
-        <div className="pt-3 border-t border-slate-100">
+        {/* Action Link Row */}
+        <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
           <Link
             href={href}
             className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-900 group-hover:text-brand-accent transition-colors"
@@ -116,6 +128,17 @@ export const IndustryCard: React.FC<IndustryCardProps> = ({
             <span>{ctaText}</span>
             <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
           </Link>
+
+          {liveDemoUrl && (
+            <a
+              href={liveDemoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-[11px] font-semibold text-teal-700 hover:text-teal-900 underline"
+            >
+              <span>Demo ↗</span>
+            </a>
+          )}
         </div>
       </div>
     </div>

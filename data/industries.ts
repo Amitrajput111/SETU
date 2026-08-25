@@ -19,18 +19,19 @@ export interface IndustryItem {
   };
   demoProjectRef: string;
   demoProjectName: string;
+  liveDemoUrl: string;
 }
 
 export const INDUSTRIES_DATA: IndustryItem[] = [
   {
     id: "healthcare",
-    title: "Healthcare & Dental Clinics",
+    title: "Healthcare & Clinics",
     subtitle: "Turn search inquiries into scheduled consultations with zero reception friction.",
     iconName: "Activity",
-    badge: "Medical & Aesthetics",
+    badge: "Medical & Aesthetic",
     subNiches: [
-      "Dental Care & Orthodontics",
       "Specialty Clinics & Doctors",
+      "Dental Care & Orthodontics",
       "Diagnostics & Pathology Labs",
       "Aesthetic Dermatology Clinics",
     ],
@@ -62,20 +63,21 @@ export const INDUSTRIES_DATA: IndustryItem[] = [
         "Steady stream of 5-star Google reviews building local organic reputation.",
       ],
     },
-    demoProjectRef: "apex-smile-dental",
-    demoProjectName: "Apex Smile Dental Studio",
+    demoProjectRef: "care-clinic",
+    demoProjectName: "CARE CLINIC",
+    liveDemoUrl: "https://client-wheat-seven-38.vercel.app/",
   },
   {
     id: "fitness",
-    title: "Fitness Studios & Wellness Centers",
+    title: "Fitness Studios & Gyms",
     subtitle: "Convert trial inquiries into active memberships and simplify class bookings.",
     iconName: "Flame",
-    badge: "Fitness & Lifestyle",
+    badge: "Fitness & Luxury Club",
     subNiches: [
-      "Gyms & Strength Centers",
+      "Luxury Gyms & Health Clubs",
       "CrossFit & Functional Studios",
       "Yoga & Pilates Academies",
-      "Spas & Wellness Retreats",
+      "Personal Training Studios",
     ],
     commonProblem: {
       heading: "Where fitness businesses drop the ball",
@@ -105,15 +107,16 @@ export const INDUSTRIES_DATA: IndustryItem[] = [
         "Improved member retention with automated renewal reminders.",
       ],
     },
-    demoProjectRef: "elevate-fitness-studio",
-    demoProjectName: "Elevate Athletic Club",
+    demoProjectRef: "aura-fitness",
+    demoProjectName: "AURA FITNESS",
+    liveDemoUrl: "https://gym-web-demo-beta.vercel.app/",
   },
   {
     id: "education",
-    title: "Coaching Institutes & Skill Academies",
+    title: "Coaching Institutes & Academies",
     subtitle: "Capture parent and student enquiries early and streamline batch admissions.",
     iconName: "GraduationCap",
-    badge: "Education & EdTech",
+    badge: "Education & Test Prep",
     subNiches: [
       "Competitive Exam Coaching (JEE/NEET/UPSC)",
       "Foundational & School Academies",
@@ -148,7 +151,8 @@ export const INDUSTRIES_DATA: IndustryItem[] = [
         "Full transparent attribution: know exactly which campaigns generated actual admissions.",
       ],
     },
-    demoProjectRef: "shikhar-learning-academy",
-    demoProjectName: "Shikhar Learning Academy",
+    demoProjectRef: "edurise",
+    demoProjectName: "EduRise Academy",
+    liveDemoUrl: "https://edurise-js16rxcct-amitrajput111s-projects.vercel.app/",
   },
 ];

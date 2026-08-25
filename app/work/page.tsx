@@ -13,23 +13,24 @@ import {
   Code2,
   ArrowRight,
   Sparkles,
+  ExternalLink,
 } from "lucide-react";
 import { FinalCTASection } from "@/components/sections/FinalCTASection";
 
 export const metadata: Metadata = {
-  title: "Work & Concept Demos — Dental, Fitness & Education Systems",
+  title: "Work & Production Demos — Clinic, Fitness & Education Systems",
   description:
-    "Explore production-grade concept demos and case study teardowns for dental clinics, athletic studios, and coaching academies.",
+    "Explore production-grade live demos and case study teardowns for healthcare clinics, athletic studios, and coaching academies.",
 };
 
 export default function WorkPage() {
   const getProjectImage = (id: string) => {
     switch (id) {
-      case "apex-smile-dental":
+      case "care-clinic-demo":
         return "/images/projects/dental-clinic.jpg";
-      case "elevate-fitness-studio":
+      case "aura-fitness-demo":
         return "/images/projects/fitness-studio.jpg";
-      case "shikhar-learning-academy":
+      case "edurise-academy-demo":
         return "/images/projects/coaching-academy.jpg";
       default:
         return "/images/projects/dental-clinic.jpg";
@@ -47,10 +48,10 @@ export default function WorkPage() {
               <span>Verified Systems & Demos</span>
             </div>
             <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
-              Work & Concept Demonstrations
+              Work & Live Demonstrations
             </h1>
             <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
-              We believe in showing, not just claiming. Explore our realistic, production-ready concept builds engineered for local service businesses.
+              Explore our realistic, production-ready live builds engineered for healthcare clinics, fitness clubs, and coaching academies.
             </p>
           </div>
         </Container>
@@ -84,8 +85,8 @@ export default function WorkPage() {
                     sizes="(max-width: 1200px) 100vw, 1200px"
                     className="object-cover object-top"
                   />
-                  <div className="absolute top-3.5 right-3.5 px-3 py-1 rounded-md bg-slate-950/80 backdrop-blur-xs text-white text-xs font-bold uppercase tracking-wider border border-white/20">
-                    Concept Architecture Demo
+                  <div className="absolute top-3.5 right-3.5 px-3 py-1 rounded-md bg-slate-950/80 backdrop-blur-xs text-teal-300 text-xs font-bold uppercase tracking-wider border border-white/20">
+                    Live Production Demo
                   </div>
                 </div>
 
@@ -96,9 +97,14 @@ export default function WorkPage() {
                       <Badge variant="blue" size="sm">
                         {demo.category}
                       </Badge>
-                      <Badge variant="concept" size="sm">
-                        Concept Demo
-                      </Badge>
+                      <a
+                        href={demo.liveDemoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-teal-100 text-teal-800 border border-teal-200 hover:bg-teal-200 transition-colors"
+                      >
+                        <span>Live Demo ↗</span>
+                      </a>
                     </div>
                     <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
                       {demo.title}
@@ -108,9 +114,20 @@ export default function WorkPage() {
                     </p>
                   </div>
 
-                  <div className="text-xs text-slate-500 bg-white p-3 rounded-xl border border-slate-200">
-                    <div><strong>Client Profile:</strong> {demo.clientType}</div>
-                    <div><strong>Target Market:</strong> {demo.location}</div>
+                  <div className="flex items-center gap-3">
+                    <div className="text-xs text-slate-500 bg-white p-3 rounded-xl border border-slate-200">
+                      <div><strong>Client Profile:</strong> {demo.clientType}</div>
+                      <div><strong>Target Market:</strong> {demo.location}</div>
+                    </div>
+                    <a
+                      href={demo.liveDemoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold shadow-xs transition-colors shrink-0"
+                    >
+                      <span>Open Website</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
                   </div>
                 </div>
 
@@ -195,9 +212,16 @@ export default function WorkPage() {
 
                 {/* Audit CTA for this vertical */}
                 <div className="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-                  <div className="text-xs text-slate-500">
-                    Want a similar system built for your {demo.category.toLowerCase()} business?
-                  </div>
+                  <a
+                    href={demo.liveDemoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-900 hover:text-brand-accent transition-colors"
+                  >
+                    <span>View Live {demo.title} Website</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+
                   <Button
                     variant="accent"
                     size="sm"
