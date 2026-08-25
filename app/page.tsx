@@ -4,6 +4,7 @@ import { TrustTechSection } from "@/components/sections/TrustTechSection";
 import { ServicesGrid } from "@/components/sections/ServicesGrid";
 import { LiveDemosSection } from "@/components/sections/LiveDemosSection";
 import { IndustriesSection } from "@/components/sections/IndustriesSection";
+import { RoiCalculator } from "@/components/sections/RoiCalculator";
 import { ProcessAndPricingHub } from "@/components/sections/ProcessAndPricingHub";
 import { FounderSection } from "@/components/sections/FounderSection";
 import { FAQSection } from "@/components/sections/FAQSection";
@@ -27,16 +28,19 @@ export default function HomePage() {
       {/* 05. Industry Blueprints (Healthcare, Fitness, Education) */}
       <IndustriesSection />
 
-      {/* 06. 5-Stage Process & Transparent Pricing Packages */}
+      {/* 06. Interactive ROI & Business Growth Estimator */}
+      <RoiCalculator />
+
+      {/* 07. 5-Stage Process & Transparent Pricing Packages */}
       <ProcessAndPricingHub />
 
-      {/* 07. About SETU & Engineering Leadership */}
+      {/* 08. About SETU & Engineering Leadership */}
       <FounderSection />
 
-      {/* 08. Frequently Asked Questions */}
+      {/* 09. Frequently Asked Questions */}
       <FAQSection />
 
-      {/* 09. Final Action Banner */}
+      {/* 10. Final Action Banner */}
       <FinalCTASection />
     </>
   );
