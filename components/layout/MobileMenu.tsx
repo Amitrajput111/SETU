@@ -82,7 +82,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
             size="lg"
             href="/audit"
             onClick={onClose}
-            className="w-full"
+            className="w-full font-bold"
             rightIcon={<ArrowRight className="w-4 h-4" />}
           >
             Get Free Business Audit
@@ -91,9 +91,9 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
           <Button
             variant="whatsapp"
             size="md"
-            href="https://wa.me/919876543210?text=Hi%20SETU%2C%20I%20would%20like%20to%20discuss%20digital%20growth%20for%20my%20business."
+            href="https://wa.me/919109265673?text=Hi%20SETU%2C%20I%20would%20like%20to%20discuss%20digital%20growth%20for%20my%20business."
             isExternal
-            className="w-full"
+            className="w-full font-bold"
             leftIcon={<MessageCircle className="w-4 h-4" />}
           >
             Talk on WhatsApp
@@ -104,11 +104,15 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
         <div className="pt-6 text-xs text-slate-500 space-y-2 px-1">
           <div className="flex items-center gap-2">
             <Mail className="w-3.5 h-3.5 text-slate-400" />
-            <span>contact@setugrowth.com</span>
+            <a href="mailto:amitrajput98267313@gmail.com" className="hover:text-brand-accent">
+              amitrajput98267313@gmail.com
+            </a>
           </div>
           <div className="flex items-center gap-2">
             <Phone className="w-3.5 h-3.5 text-slate-400" />
-            <span>+91 98765 43210</span>
+            <a href="tel:+919109265673" className="hover:text-brand-accent">
+              +91 91092 65673
+            </a>
           </div>
           <div className="text-[11px] text-slate-400 pt-1">
             Indore (M.P.), India · Working with businesses globally

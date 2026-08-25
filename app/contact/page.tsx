@@ -18,7 +18,7 @@ import { Button } from "@/components/ui/Button";
 export const metadata: Metadata = {
   title: "Contact SETU — Direct WhatsApp & Consultation Inquiry",
   description:
-    "Get in touch with the SETU engineering team. Chat directly on WhatsApp, request a consultation, or send us a message.",
+    "Get in touch with the SETU engineering team. Chat directly on WhatsApp (+91 91092 65673), request a consultation, or send us a message.",
 };
 
 export default function ContactPage() {
@@ -69,7 +69,7 @@ export default function ContactPage() {
                 <Button
                   variant="whatsapp"
                   size="md"
-                  href="https://wa.me/919876543210?text=Hi%20SETU%2C%20I%20would%20like%20to%20discuss%20a%20project%20for%20my%20business."
+                  href="https://wa.me/919109265673?text=Hi%20SETU%2C%20I%20would%20like%20to%20discuss%20a%20project%20for%20my%20business."
                   isExternal
                   className="w-full font-bold shadow-sm"
                   leftIcon={<MessageCircle className="w-4 h-4" />}
@@ -81,7 +81,7 @@ export default function ContactPage() {
               {/* Office & Details */}
               <div className="p-6 sm:p-7 rounded-2xl bg-white border border-slate-200 shadow-card space-y-4">
                 <h3 className="text-sm font-bold text-slate-900">
-                  Headquarters & Region
+                  Headquarters &amp; Details
                 </h3>
 
                 <div className="space-y-3 text-xs text-slate-600">
@@ -90,7 +90,7 @@ export default function ContactPage() {
                     <div>
                       <strong className="text-slate-800">Primary Hub:</strong>
                       <div>Indore, Madhya Pradesh, India</div>
-                      <div className="text-slate-400">Serving businesses across India & worldwide</div>
+                      <div className="text-slate-400">Serving businesses across India &amp; worldwide</div>
                     </div>
                   </div>
 
@@ -98,15 +98,23 @@ export default function ContactPage() {
                     <Mail className="w-4 h-4 text-brand-accent shrink-0 mt-0.5" />
                     <div>
                       <strong className="text-slate-800">Email:</strong>
-                      <div>contact@setugrowth.com</div>
+                      <div>
+                        <a href="mailto:amitrajput98267313@gmail.com" className="text-brand-accent hover:underline">
+                          amitrajput98267313@gmail.com
+                        </a>
+                      </div>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-3">
                     <Phone className="w-4 h-4 text-brand-accent shrink-0 mt-0.5" />
                     <div>
-                      <strong className="text-slate-800">Direct Phone:</strong>
-                      <div>+91 98765 43210</div>
+                      <strong className="text-slate-800">Direct Phone &amp; WhatsApp:</strong>
+                      <div>
+                        <a href="tel:+919109265673" className="text-slate-900 hover:text-brand-accent font-semibold">
+                          +91 91092 65673
+                        </a>
+                      </div>
                     </div>
                   </div>
 
@@ -115,7 +123,7 @@ export default function ContactPage() {
                     <div>
                       <strong className="text-slate-800">Operating Hours:</strong>
                       <div>Monday – Saturday: 9:30 AM – 7:30 PM IST</div>
-                      <div className="text-slate-400">AI triage & lead capture active 24/7</div>
+                      <div className="text-slate-400">AI triage &amp; lead capture active 24/7</div>
                     </div>
                   </div>
                 </div>

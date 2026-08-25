@@ -30,7 +30,7 @@ export const FinalCTASection: React.FC = () => {
           <Button
             variant="whatsapp"
             size="lg"
-            href="https://wa.me/919876543210?text=Hi%20SETU%2C%20I%20would%20like%20to%20discuss%20improving%20my%20business%20presence."
+            href="https://wa.me/919109265673?text=Hi%20SETU%2C%20I%20would%20like%20to%20discuss%20improving%20my%20business%20presence."
             isExternal
             className="w-full sm:w-auto font-bold"
             leftIcon={<MessageCircle className="w-4 h-4" />}

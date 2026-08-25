@@ -89,9 +89,9 @@ npm install
 Create a `.env` file in the root directory (refer to `.env.example`):
 ```env
 DATABASE_URL="file:./dev.db"
-NEXT_PUBLIC_APP_URL="http://localhost:3000"
-NEXT_PUBLIC_WHATSAPP_NUMBER="919876543210"
-NEXT_PUBLIC_CONTACT_EMAIL="contact@setugrowth.com"
+NEXT_PUBLIC_APP_URL="https://setu-platform-rust.vercel.app"
+NEXT_PUBLIC_WHATSAPP_NUMBER="919109265673"
+NEXT_PUBLIC_CONTACT_EMAIL="amitrajput98267313@gmail.com"
 ```
 
 ### 4. Initialize Database
@@ -117,9 +117,9 @@ Deploying to **Vercel** is seamless:
 3. Import the `SETU` repository.
 4. Set the environment variables in Vercel:
    - `DATABASE_URL`: Your database connection string (e.g. Vercel Postgres, Neon, or Turso SQLite).
-   - `NEXT_PUBLIC_APP_URL`: Your production domain (e.g. `https://your-domain.vercel.app`).
-   - `NEXT_PUBLIC_WHATSAPP_NUMBER`: Your business WhatsApp number.
-   - `NEXT_PUBLIC_CONTACT_EMAIL`: Your primary contact email.
+   - `NEXT_PUBLIC_APP_URL`: Your production domain (`https://setu-platform-rust.vercel.app`).
+   - `NEXT_PUBLIC_WHATSAPP_NUMBER`: Your business WhatsApp number (`919109265673`).
+   - `NEXT_PUBLIC_CONTACT_EMAIL`: Your primary contact email (`amitrajput98267313@gmail.com`).
 5. Click **Deploy**. Vercel will automatically run `prisma generate && next build` and deploy your application globally on Edge infrastructure.
 
 ---
@@ -132,6 +132,6 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
 
 ## 🤝 Connect
 
-- **Website**: [https://setugrowth.com](https://setugrowth.com)
-- **WhatsApp**: [+91 98765 43210](https://wa.me/919876543210)
-- **Email**: [contact@setugrowth.com](mailto:contact@setugrowth.com)
+- **Production Platform**: [https://setu-platform-rust.vercel.app](https://setu-platform-rust.vercel.app)
+- **WhatsApp**: [+91 91092 65673](https://wa.me/919109265673)
+- **Email**: [amitrajput98267313@gmail.com](mailto:amitrajput98267313@gmail.com)

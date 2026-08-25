@@ -128,7 +128,7 @@ export const ContactForm: React.FC = () => {
               <Phone className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
               <input
                 type="tel"
-                placeholder="98765 43210"
+                placeholder="91092 65673"
                 {...register("phone")}
                 className={cn(
                   "w-full pl-9 pr-3 py-2 rounded-xl border text-xs sm:text-sm focus:outline-none focus:ring-2",

@@ -22,7 +22,7 @@ export const FAQSection: React.FC = () => {
         <div className="mt-12 text-center text-xs text-slate-500">
           <span>Have a specific question not listed here? </span>
           <a
-            href="https://wa.me/919876543210?text=Hi%20SETU%2C%20I%20have%20a%20question%20about%20your%20services."
+            href="https://wa.me/919109265673?text=Hi%20SETU%2C%20I%20have%20a%20question%20about%20your%20services."
             target="_blank"
             rel="noopener noreferrer"
             className="text-brand-accent font-semibold hover:underline inline-flex items-center gap-1"

@@ -228,7 +228,7 @@ export const SidebarDrawer: React.FC<{
           </Link>
 
           <a
-            href="https://wa.me/919876543210?text=Hi%20SETU%2C%20I%20would%20like%20to%20connect%20with%20your%20team."
+            href="https://wa.me/919109265673?text=Hi%20SETU%2C%20I%20would%20like%20to%20connect%20with%20your%20team."
             target="_blank"
             rel="noopener noreferrer"
             className="w-full py-2.5 px-4 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs sm:text-sm font-bold flex items-center justify-center gap-2"

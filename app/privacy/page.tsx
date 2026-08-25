@@ -21,7 +21,7 @@ export default function PrivacyPage() {
 
           <div className="prose prose-slate text-xs sm:text-sm leading-relaxed text-slate-600 space-y-6">
             <p>
-              At <strong>SETU (&ldquo;SETU Digital Growth & Automation&rdquo;)</strong>, we respect your privacy and are committed to protecting the personal and business data you share with us through our website, audit forms, or direct WhatsApp inquiries.
+              At <strong>SETU (&ldquo;SETU Digital Growth &amp; Automation&rdquo;)</strong>, we respect your privacy and are committed to protecting the personal and business data you share with us through our website, audit forms, or direct WhatsApp inquiries.
             </p>
 
             <h2 className="text-base font-bold text-slate-900">1. Information We Collect</h2>
@@ -40,19 +40,19 @@ export default function PrivacyPage() {
               We use your submitted details strictly to:
             </p>
             <ul className="list-disc pl-5 space-y-1 text-slate-600">
-              <li>Conduct and deliver your requested Digital Presence Audit & Improvement Roadmap.</li>
+              <li>Conduct and deliver your requested Digital Presence Audit &amp; Improvement Roadmap.</li>
               <li>Communicate project milestones, proposals, and system configurations via WhatsApp or Email.</li>
               <li>Provide ongoing client support and system maintenance.</li>
             </ul>
 
-            <h2 className="text-base font-bold text-slate-900">3. Data Confidentiality & Protection</h2>
+            <h2 className="text-base font-bold text-slate-900">3. Data Confidentiality &amp; Protection</h2>
             <p>
               We <strong>never</strong> sell, rent, or trade your contact information or proprietary business data to third-party advertisers. All lead data is stored in secured databases with encryption in transit and at rest.
             </p>
 
-            <h2 className="text-base font-bold text-slate-900">4. Contact & Inquiries</h2>
+            <h2 className="text-base font-bold text-slate-900">4. Contact &amp; Inquiries</h2>
             <p>
-              If you have any questions regarding your data privacy, please contact our team directly at <a href="mailto:contact@setugrowth.com" className="text-brand-accent underline">contact@setugrowth.com</a>.
+              If you have any questions regarding your data privacy, please contact our team directly at <a href="mailto:amitrajput98267313@gmail.com" className="text-brand-accent underline">amitrajput98267313@gmail.com</a> or via phone at <a href="tel:+919109265673" className="text-brand-accent underline">+91 91092 65673</a>.
             </p>
           </div>
         </div>

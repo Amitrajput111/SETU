@@ -128,7 +128,7 @@ export const AuditForm: React.FC<AuditFormProps> = ({
 
         <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
           <a
-            href={`https://wa.me/919876543210?text=Hi%20SETU%2C%20I%20just%20submitted%20the%20digital%20audit%20form${referenceId ? `%20(Ref%3A%20${referenceId})` : ""}.`}
+            href={`https://wa.me/919109265673?text=Hi%20SETU%2C%20I%20just%20submitted%20the%20digital%20audit%20form${referenceId ? `%20(Ref%3A%20${referenceId})` : ""}.`}
             target="_blank"
             rel="noopener noreferrer"
             className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs sm:text-sm font-semibold transition-all shadow-sm"
@@ -280,7 +280,7 @@ export const AuditForm: React.FC<AuditFormProps> = ({
                 <Phone className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
                 <input
                   type="tel"
-                  placeholder="e.g. 98765 43210"
+                  placeholder="e.g. 91092 65673"
                   {...register("whatsappNumber")}
                   className={cn(
                     "w-full pl-9 pr-3.5 py-2.5 rounded-xl border text-xs sm:text-sm transition-all focus:outline-none focus:ring-2",
