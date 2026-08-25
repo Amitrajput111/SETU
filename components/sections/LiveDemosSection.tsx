@@ -15,6 +15,7 @@ import {
   MapPin,
   ExternalLink,
   Lock,
+  CheckCircle2,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -33,9 +34,12 @@ export const LiveDemosSection: React.FC = () => {
       location: "Indore, MP",
       displayUrl: "careclinic-indore.vercel.app",
       liveDemoUrl: "https://client-wheat-seven-38.vercel.app/",
-      summaryLine1: "Multi-specialty clinic struggling with missed after-hours patient enquiries and front-desk appointment chaos.",
-      summaryLine2: "Engineered a sub-second Next.js web portal with transparent doctor consultation fees and 24/7 automated WhatsApp booking.",
-      summaryLine3: "Outcome: -68% reduction in appointment no-shows and #1 Google Maps ranking across a 10km radius.",
+      description: "Modern patient booking platform engineered for multi-specialty clinics with transparent fees and zero reception delays.",
+      highlights: [
+        "Instant 1-Tap WhatsApp doctor appointment booking",
+        "Transparent consultation fees & verified doctor profiles",
+        "Automated 24h & 2h patient WhatsApp reminders (-68% No-Shows)",
+      ],
       metrics: [
         { label: "Response Time", value: "< 35 Sec" },
         { label: "No-Show Drop", value: "-68%" },
@@ -52,13 +56,16 @@ export const LiveDemosSection: React.FC = () => {
       location: "Indore, MP",
       displayUrl: "aurafitness-elite.vercel.app",
       liveDemoUrl: "https://gym-web-demo-beta.vercel.app/",
-      summaryLine1: "Boutique luxury gym losing social traffic due to slow forms and zero automated follow-ups on trial passes.",
-      summaryLine2: "Built a high-converting dark-mode athletic portal with live trainer schedules and instant WhatsApp 1-Day VIP Pass generator.",
-      summaryLine3: "Outcome: +4.8x increase in claimed VIP trial passes and 142 new monthly active member conversions.",
+      description: "High-converting dark-mode athletic portal engineered to turn social media visitors into recurring gym members.",
+      highlights: [
+        "Instant 1-Day VIP Trial Pass generator on WhatsApp",
+        "Interactive weekly trainer timetable & class booking",
+        "Automated membership renewals & follow-up workflows",
+      ],
       metrics: [
         { label: "Trial Pass Surge", value: "+4.8x" },
         { label: "PageSpeed", value: "99 / 100" },
-        { label: "Monthly Members", value: "142 Active" },
+        { label: "Active Members", value: "142 Monthly" },
       ],
       slug: "aura-fitness",
     },
@@ -71,13 +78,16 @@ export const LiveDemosSection: React.FC = () => {
       location: "Indore, MP",
       displayUrl: "edurise-admissions.vercel.app",
       liveDemoUrl: "https://edurise-js16rxcct-amitrajput111s-projects.vercel.app/",
-      summaryLine1: "Competitive JEE/NEET institute where counselors manually texted fee structures with low parent conversion.",
-      summaryLine2: "Engineered an authoritative admissions portal with top rankers gallery, faculty credentials, and instant WhatsApp syllabus PDF delivery.",
-      summaryLine3: "Outcome: Automated syllabus delivery in 5 seconds and +84% higher attendance at weekend free demo lectures.",
+      description: "High-credibility student admissions engine built for premier JEE, NEET and Foundation coaching institutes.",
+      highlights: [
+        "Top rankers gallery & verified faculty credentials",
+        "Automated 5-second syllabus & fee PDF delivery to parents",
+        "Instant inquiry alerts dispatched directly to counselor phones",
+      ],
       metrics: [
         { label: "Prospectus Speed", value: "5 Seconds" },
         { label: "Demo Attendance", value: "+84%" },
-        { label: "Monthly Inquiries", value: "380+" },
+        { label: "Monthly Leads", value: "380+" },
       ],
       slug: "edurise",
     },
@@ -117,15 +127,15 @@ export const LiveDemosSection: React.FC = () => {
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-slate-200 text-slate-800 mb-3">
               <Sparkles className="w-3.5 h-3.5 text-brand-accent" />
-              <span>Live Production Demos</span>
+              <span>Featured Client Systems</span>
               <span className="w-1.5 h-1.5 rounded-full bg-teal-600 animate-pulse ml-1" />
-              <span className="text-[10px] text-teal-700 font-mono font-bold">2s Auto-Slide</span>
+              <span className="text-[10px] text-teal-700 font-mono font-bold">Live Demos</span>
             </div>
             <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
               Work that makes businesses look better — and work better.
             </h2>
             <p className="text-sm sm:text-base text-slate-600 max-w-2xl mt-2 font-normal">
-              Slide through live client systems engineered for Healthcare Clinics, Luxury Fitness Clubs, and Coaching Academies.
+              Explore high-performance digital systems engineered for Healthcare Clinics, Luxury Fitness Clubs, and Coaching Academies.
             </p>
           </div>
 
@@ -192,7 +202,7 @@ export const LiveDemosSection: React.FC = () => {
             {projects.map((project) => (
               <div key={project.id} className="w-full shrink-0">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 items-stretch">
-                  {/* Left Column: Clean Browser Frame with ZERO text overlay on image */}
+                  {/* Left Column: Clean Browser Frame */}
                   <div className="lg:col-span-7 flex flex-col bg-slate-950 border-b lg:border-b-0 lg:border-r border-slate-200/80">
                     {/* Browser Chrome Header */}
                     <div className="px-4 py-2.5 bg-slate-900 border-b border-slate-800 flex items-center justify-between gap-3">
@@ -220,7 +230,7 @@ export const LiveDemosSection: React.FC = () => {
                       </a>
                     </div>
 
-                    {/* Pure Image Container: 100% clean without text collisions */}
+                    {/* Clean UI Screenshot Viewport */}
                     <div className="relative aspect-[16/10] w-full flex-1 min-h-[280px] sm:min-h-[340px] lg:min-h-[420px] bg-slate-950">
                       <Image
                         src={project.imageSrc}
@@ -233,9 +243,9 @@ export const LiveDemosSection: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Right Column: Structured Teardown Text & Actions */}
-                  <div className="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between space-y-5 bg-slate-50/40">
-                    <div className="space-y-4">
+                  {/* Right Column: Clean Agency Copy & Deliverables */}
+                  <div className="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between space-y-6 bg-slate-50/40">
+                    <div className="space-y-5">
                       <div className="flex items-center justify-between gap-3">
                         <div>
                           <div className="flex items-center gap-2">
@@ -262,24 +272,26 @@ export const LiveDemosSection: React.FC = () => {
                         </a>
                       </div>
 
-                      {/* 3 Clear Teardown Cards */}
-                      <div className="space-y-2.5 text-xs sm:text-sm text-slate-700 leading-relaxed">
-                        <div className="p-3 rounded-xl bg-white border border-slate-200/90 text-slate-600 shadow-2xs">
-                          <strong className="text-slate-900 block mb-0.5">Client Context:</strong>
-                          <span>{project.summaryLine1}</span>
+                      {/* Clean 1-sentence value overview */}
+                      <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                        {project.description}
+                      </p>
+
+                      {/* 3 Key Highlights with Clean Checkmarks */}
+                      <div className="space-y-2 pt-1 border-t border-slate-200/80">
+                        <div className="text-[11px] font-bold text-slate-900 uppercase tracking-wider">
+                          Key Capabilities:
                         </div>
-                        <div className="p-3 rounded-xl bg-white border border-slate-200/90 text-slate-600 shadow-2xs">
-                          <strong className="text-slate-900 block mb-0.5">SETU System:</strong>
-                          <span>{project.summaryLine2}</span>
-                        </div>
-                        <div className="p-3 rounded-xl bg-teal-50/80 border border-teal-100 text-teal-950 shadow-2xs">
-                          <strong className="text-teal-900 block mb-0.5 font-bold">Verified Result:</strong>
-                          <span className="font-medium">{project.summaryLine3}</span>
-                        </div>
+                        {project.highlights.map((h, i) => (
+                          <div key={i} className="flex items-start gap-2 text-xs text-slate-700">
+                            <CheckCircle2 className="w-3.5 h-3.5 text-teal-600 shrink-0 mt-0.5" />
+                            <span>{h}</span>
+                          </div>
+                        ))}
                       </div>
 
-                      {/* 3 Metric Pills */}
-                      <div className="grid grid-cols-3 gap-2 pt-1">
+                      {/* 3 Metric Badges */}
+                      <div className="grid grid-cols-3 gap-2 pt-2 border-t border-slate-200/80">
                         {project.metrics.map((m, i) => (
                           <div key={i} className="p-2.5 rounded-xl bg-white border border-slate-200 text-center shadow-2xs">
                             <div className="text-[10px] text-slate-400 font-medium truncate">{m.label}</div>
@@ -290,7 +302,7 @@ export const LiveDemosSection: React.FC = () => {
                     </div>
 
                     {/* Action Buttons */}
-                    <div className="pt-3 border-t border-slate-200/80 flex items-center justify-between gap-3">
+                    <div className="pt-4 border-t border-slate-200/80 flex items-center justify-between gap-3">
                       <a
                         href={project.liveDemoUrl}
                         target="_blank"
@@ -315,7 +327,7 @@ export const LiveDemosSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Slide Indicator Dots with State Indicator */}
+        {/* Slide Indicator Dots */}
         <div className="flex justify-center items-center gap-3 mt-6">
           <div className="flex items-center gap-2">
             {projects.map((_, idx) => (
