@@ -16,20 +16,22 @@ import {
   Flame,
   GraduationCap,
   ExternalLink,
+  Lock,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export const HeroSection: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-  const autoPlayRef = useRef<NodeJS.Timeout | null>(null);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   const previewTabs = [
     {
       id: "pipeline",
       label: "Growth Pipeline",
       icon: <Globe className="w-3.5 h-3.5" />,
-      title: "Discovery → Next.js Web → WhatsApp → Calendar",
+      title: "SETU Connected Growth Pipeline",
+      displayUrl: "pipeline.setu.in",
       imageSrc: "/images/system-flowchart.jpg",
       highlight: "Zero Lead Leakage",
       summary: "How search visitors automatically turn into confirmed bookings on your calendar.",
@@ -40,8 +42,9 @@ export const HeroSection: React.FC = () => {
       label: "CARE CLINIC",
       icon: <Activity className="w-3.5 h-3.5" />,
       title: "CARE CLINIC — Healthcare Portal",
+      displayUrl: "careclinic-indore.vercel.app",
       imageSrc: "/images/projects/dental-clinic.jpg",
-      highlight: "-68% No-Shows · Top 3 Google Maps",
+      highlight: "-68% No-Shows",
       summary: "Transparent doctor consultation fees with 24/7 automated WhatsApp slot booking.",
       liveUrl: "https://client-wheat-seven-38.vercel.app/",
     },
@@ -50,8 +53,9 @@ export const HeroSection: React.FC = () => {
       label: "AURA FITNESS",
       icon: <Flame className="w-3.5 h-3.5" />,
       title: "AURA FITNESS — Luxury Health Club",
+      displayUrl: "aurafitness-elite.vercel.app",
       imageSrc: "/images/projects/fitness-studio.jpg",
-      highlight: "+4.8x VIP Passes Claimed",
+      highlight: "+4.8x VIP Passes",
       summary: "Live class timetables with instant 1-Day VIP Trial Pass delivery on WhatsApp.",
       liveUrl: "https://gym-web-demo-beta.vercel.app/",
     },
@@ -60,25 +64,24 @@ export const HeroSection: React.FC = () => {
       label: "EduRise Academy",
       icon: <GraduationCap className="w-3.5 h-3.5" />,
       title: "EduRise Academy — Admissions Engine",
+      displayUrl: "edurise-admissions.vercel.app",
       imageSrc: "/images/projects/coaching-academy.jpg",
-      highlight: "Instant 5s Prospectus Delivery",
+      highlight: "5s Prospectus Speed",
       summary: "Top rankers gallery and automated syllabus & fee PDF delivery to parents.",
       liveUrl: "https://edurise-js16rxcct-amitrajput111s-projects.vercel.app/",
     },
   ];
 
-  const current = previewTabs[activeTab];
-
-  // Auto-sliding timer (5.5s interval)
+  // Auto-sliding 5s timer
   useEffect(() => {
     if (isPaused) return;
 
-    autoPlayRef.current = setInterval(() => {
+    timerRef.current = setInterval(() => {
       setActiveTab((prev) => (prev === previewTabs.length - 1 ? 0 : prev + 1));
-    }, 5500);
+    }, 5000);
 
     return () => {
-      if (autoPlayRef.current) clearInterval(autoPlayRef.current);
+      if (timerRef.current) clearInterval(timerRef.current);
     };
   }, [isPaused, previewTabs.length]);
 
@@ -179,55 +182,76 @@ export const HeroSection: React.FC = () => {
                 <div
                   key={activeTab}
                   className={cn(
-                    "h-full bg-teal-400 transition-all duration-[5500ms] ease-linear",
+                    "h-full bg-teal-400 transition-all duration-[5000ms] ease-linear",
                     isPaused ? "opacity-40" : "w-full"
                   )}
                   style={{ width: isPaused ? "100%" : undefined }}
                 />
               </div>
 
-              {/* Visual 16:9 Image Viewport */}
-              <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full bg-slate-950 overflow-hidden">
-                <Image
-                  src={current.imageSrc}
-                  alt={`${current.title} Preview`}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover object-top transition-all duration-500"
-                  priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-black/20 pointer-events-none" />
+              {/* Continuous Horizontal Slider Track with Clean Browser Chrome */}
+              <div
+                className="flex transition-transform duration-700 ease-in-out"
+                style={{ transform: `translateX(-${activeTab * 100}%)` }}
+              >
+                {previewTabs.map((tab) => (
+                  <div key={tab.id} className="w-full shrink-0 flex flex-col">
+                    {/* Browser Mockup Top Bar */}
+                    <div className="px-4 py-2 bg-slate-900/90 border-b border-slate-800 flex items-center justify-between gap-3 text-xs">
+                      <div className="flex items-center gap-1.5">
+                        <span className="w-2 h-2 rounded-full bg-red-500/80" />
+                        <span className="w-2 h-2 rounded-full bg-amber-500/80" />
+                        <span className="w-2 h-2 rounded-full bg-emerald-500/80" />
+                      </div>
 
-                {/* Top Badge */}
-                <div className="absolute top-3.5 left-3.5 z-10">
-                  <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md bg-slate-950/90 backdrop-blur-xs text-teal-300 border border-teal-500/30">
-                    {current.highlight}
-                  </span>
-                </div>
+                      <div className="flex-1 max-w-xs mx-auto px-2.5 py-0.5 rounded-md bg-slate-950 border border-slate-800 text-[10px] text-slate-300 font-mono flex items-center justify-center gap-1.5 truncate">
+                        <Lock className="w-2.5 h-2.5 text-teal-400 shrink-0" />
+                        <span className="text-teal-300">https://</span>
+                        <span className="truncate">{tab.displayUrl}</span>
+                      </div>
 
-                {/* Bottom Caption Bar */}
-                <div className="absolute bottom-3.5 left-3.5 right-3.5 z-10 flex items-center justify-between text-xs bg-slate-950/70 p-2 rounded-xl backdrop-blur-xs border border-white/10">
-                  <span className="text-slate-300 text-[11px] truncate max-w-[75%]">
-                    {current.summary}
-                  </span>
-                  {current.liveUrl.startsWith("http") ? (
-                    <a
-                      href={current.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-teal-300 hover:text-white font-bold text-xs shrink-0 flex items-center gap-1"
-                    >
-                      <span>Live ↗</span>
-                    </a>
-                  ) : (
-                    <Link
-                      href={current.liveUrl}
-                      className="text-teal-300 hover:text-white font-bold text-xs shrink-0 flex items-center gap-0.5"
-                    >
-                      <span>Explore &rarr;</span>
-                    </Link>
-                  )}
-                </div>
+                      <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-teal-500/20 text-teal-300 border border-teal-500/30 shrink-0">
+                        {tab.highlight}
+                      </span>
+                    </div>
+
+                    {/* Pure Image Viewport: Clean Zero Overlay on the Graphic */}
+                    <div className="relative aspect-[16/10] sm:aspect-[16/9] w-full bg-slate-950">
+                      <Image
+                        src={tab.imageSrc}
+                        alt={`${tab.title} Preview`}
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                        className="object-cover object-top"
+                        priority
+                      />
+                    </div>
+
+                    {/* Clean Bottom Summary Bar (Outside the image) */}
+                    <div className="p-3 bg-slate-900 border-t border-slate-800 flex items-center justify-between text-xs">
+                      <span className="text-slate-300 text-[11px] truncate max-w-[75%]">
+                        {tab.summary}
+                      </span>
+                      {tab.liveUrl.startsWith("http") ? (
+                        <a
+                          href={tab.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-teal-300 hover:text-white font-bold text-xs shrink-0 flex items-center gap-1"
+                        >
+                          <span>Live ↗</span>
+                        </a>
+                      ) : (
+                        <Link
+                          href={tab.liveUrl}
+                          className="text-teal-300 hover:text-white font-bold text-xs shrink-0 flex items-center gap-0.5"
+                        >
+                          <span>Explore &rarr;</span>
+                        </Link>
+                      )}
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

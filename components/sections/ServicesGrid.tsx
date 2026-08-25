@@ -5,13 +5,24 @@ import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Globe, MapPin, Share2, MessageCircle, Cpu, Check, ArrowRight, ChevronLeft, ChevronRight, Sparkles } from "lucide-react";
+import {
+  Globe,
+  MapPin,
+  Share2,
+  MessageCircle,
+  Cpu,
+  Check,
+  ArrowRight,
+  ChevronLeft,
+  ChevronRight,
+  Lock,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export const ServicesGrid: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-  const autoPlayRef = useRef<NodeJS.Timeout | null>(null);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   const services = [
     {
@@ -19,6 +30,7 @@ export const ServicesGrid: React.FC = () => {
       number: "01",
       title: "High-Performance Websites",
       category: "Web Infrastructure",
+      displayUrl: "system.setu.in/websites",
       shortDescription: "Custom Next.js web applications engineered for sub-second page loads, mobile responsiveness, and high conversion.",
       imageSrc: "/images/services/websites.jpg",
       capabilities: [
@@ -27,7 +39,7 @@ export const ServicesGrid: React.FC = () => {
         "Mobile-first responsive architecture with zero layout shift",
         "Direct Click-to-WhatsApp funnels & appointment modals",
       ],
-      href: "/services#websites",
+      href: "/#services",
       icon: <Globe className="w-4 h-4 text-blue-500" />,
       outcomeMetric: "99 / 100 PageSpeed",
     },
@@ -36,6 +48,7 @@ export const ServicesGrid: React.FC = () => {
       number: "02",
       title: "Local Growth & Google Maps",
       category: "Local Visibility",
+      displayUrl: "system.setu.in/local-seo",
       shortDescription: "Dominate the local 3-pack on Google Maps and search queries when nearby customers search for your services.",
       imageSrc: "/images/services/local-growth.jpg",
       capabilities: [
@@ -44,7 +57,7 @@ export const ServicesGrid: React.FC = () => {
         "Automated 5-star review collection flywheel via WhatsApp",
         "Targeted local keyword rank tracking in a 10km radius",
       ],
-      href: "/services#local-growth",
+      href: "/#services",
       icon: <MapPin className="w-4 h-4 text-teal-500" />,
       outcomeMetric: "Top 3 Google Maps Pack",
     },
@@ -53,6 +66,7 @@ export const ServicesGrid: React.FC = () => {
       number: "03",
       title: "Social Presence & Branding",
       category: "Digital Trust",
+      displayUrl: "system.setu.in/branding",
       shortDescription: "Build a consistent, authoritative brand identity across Instagram, LinkedIn, and local social touchpoints.",
       imageSrc: "/images/services/social-presence.jpg",
       capabilities: [
@@ -61,7 +75,7 @@ export const ServicesGrid: React.FC = () => {
         "Authority carousels showcasing real before-and-after results",
         "Profile bio & link-in-bio high-converting lead routing",
       ],
-      href: "/services#social-presence",
+      href: "/#services",
       icon: <Share2 className="w-4 h-4 text-indigo-500" />,
       outcomeMetric: "30-Day Cohesive Calendar",
     },
@@ -70,6 +84,7 @@ export const ServicesGrid: React.FC = () => {
       number: "04",
       title: "Lead Systems & WhatsApp",
       category: "Conversion Funnels",
+      displayUrl: "system.setu.in/whatsapp-leads",
       shortDescription: "Turn casual visitors into qualified enquiries with frictionless 2-step capture and instant WhatsApp routing.",
       imageSrc: "/images/services/lead-generation.jpg",
       capabilities: [
@@ -78,7 +93,7 @@ export const ServicesGrid: React.FC = () => {
         "Instant lead notification alerts dispatched to your team's phones",
         "Lead attribution tracking by campaign and search source",
       ],
-      href: "/services#lead-generation",
+      href: "/#services",
       icon: <MessageCircle className="w-4 h-4 text-emerald-500" />,
       outcomeMetric: "< 60s Lead Triage",
     },
@@ -87,6 +102,7 @@ export const ServicesGrid: React.FC = () => {
       number: "05",
       title: "AI Business Automation",
       category: "Workflow Automation",
+      displayUrl: "system.setu.in/ai-crm",
       shortDescription: "Automate repetitive customer queries, calendar scheduling, and reminder workflows without hiring extra staff.",
       imageSrc: "/images/services/ai-automation.jpg",
       capabilities: [
@@ -95,24 +111,22 @@ export const ServicesGrid: React.FC = () => {
         "Automated 24h & 2h WhatsApp appointment reminder triggers",
         "Zero phone tag: self-serve customer rescheduling portal",
       ],
-      href: "/services#ai-automation",
+      href: "/#services",
       icon: <Cpu className="w-4 h-4 text-purple-500" />,
       outcomeMetric: "-68% Appointment No-Shows",
     },
   ];
 
-  const currentService = services[activeTab];
-
-  // Auto-sliding timer (5.5s interval)
+  // Auto-sliding 5s timer
   useEffect(() => {
     if (isPaused) return;
 
-    autoPlayRef.current = setInterval(() => {
+    timerRef.current = setInterval(() => {
       setActiveTab((prev) => (prev === services.length - 1 ? 0 : prev + 1));
-    }, 5500);
+    }, 5000);
 
     return () => {
-      if (autoPlayRef.current) clearInterval(autoPlayRef.current);
+      if (timerRef.current) clearInterval(timerRef.current);
     };
   }, [isPaused, services.length]);
 
@@ -126,7 +140,7 @@ export const ServicesGrid: React.FC = () => {
 
   return (
     <section
-      className="py-20 sm:py-28 bg-white border-b border-slate-200/80 scroll-mt-16 sm:scroll-mt-20"
+      className="py-20 sm:py-28 bg-white border-b border-slate-200/80 scroll-mt-16 sm:scroll-mt-20 overflow-hidden"
       id="services"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
@@ -142,7 +156,7 @@ export const ServicesGrid: React.FC = () => {
             />
           </div>
 
-          {/* Slide Controls */}
+          {/* Navigation Controls */}
           <div className="flex items-center gap-3 shrink-0">
             <span className="text-xs font-mono text-slate-500 font-semibold mr-1">
               0{activeTab + 1} / 0{services.length}
@@ -173,7 +187,7 @@ export const ServicesGrid: React.FC = () => {
                 key={s.id}
                 onClick={() => setActiveTab(idx)}
                 className={cn(
-                  "p-3 sm:p-3.5 rounded-2xl text-left border transition-all duration-150 flex flex-col justify-between",
+                  "p-3 sm:p-3.5 rounded-2xl text-left border transition-all duration-200 flex flex-col justify-between",
                   isSelected
                     ? "bg-slate-900 text-white border-slate-900 shadow-sm scale-[1.01]"
                     : "bg-slate-50 text-slate-700 border-slate-200/90 hover:bg-white hover:border-slate-300"
@@ -183,7 +197,7 @@ export const ServicesGrid: React.FC = () => {
                   <div className={cn("w-7 h-7 rounded-lg flex items-center justify-center", isSelected ? "bg-slate-800" : "bg-white border border-slate-200")}>
                     {s.icon}
                   </div>
-                  <span className={cn("font-mono text-[10px] font-bold", isSelected ? "text-slate-400" : "text-slate-400")}>
+                  <span className={cn("font-mono text-[10px] font-bold", isSelected ? "text-teal-400" : "text-slate-400")}>
                     {s.number}
                   </span>
                 </div>
@@ -195,88 +209,108 @@ export const ServicesGrid: React.FC = () => {
           })}
         </div>
 
-        {/* Visual Showcase Box (Split Layout with Progress Bar) */}
+        {/* Visual Showcase Box (Continuous Horizontal Slider with Zero Overlays) */}
         <div className="bg-[#F8FAFC] rounded-3xl border border-slate-200/90 shadow-card overflow-hidden">
           {/* Animated Auto-Slide Progress Bar */}
           <div className="w-full h-1 bg-slate-200 relative overflow-hidden">
             <div
               key={activeTab}
               className={cn(
-                "h-full bg-brand-accent transition-all duration-[5500ms] ease-linear",
+                "h-full bg-brand-accent transition-all duration-[5000ms] ease-linear",
                 isPaused ? "opacity-40" : "w-full"
               )}
               style={{ width: isPaused ? "100%" : undefined }}
             />
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 items-center">
-            {/* Left: Capability Breakdown */}
-            <div className="lg:col-span-5 p-7 sm:p-10 space-y-6">
-              <div>
-                <div className="text-xs font-bold uppercase tracking-wider text-brand-accent mb-1">
-                  {currentService.category} · Service {currentService.number}
-                </div>
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-                  {currentService.title}
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed font-normal">
-                  {currentService.shortDescription}
-                </p>
-              </div>
+          <div
+            className="flex transition-transform duration-700 ease-in-out"
+            style={{ transform: `translateX(-${activeTab * 100}%)` }}
+          >
+            {services.map((service) => (
+              <div key={service.id} className="w-full shrink-0">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 items-center">
+                  {/* Left: Capability Breakdown */}
+                  <div className="lg:col-span-5 p-7 sm:p-10 space-y-6">
+                    <div>
+                      <div className="text-xs font-bold uppercase tracking-wider text-brand-accent mb-1">
+                        {service.category} · Service {service.number}
+                      </div>
+                      <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+                        {service.title}
+                      </h3>
+                      <p className="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed font-normal">
+                        {service.shortDescription}
+                      </p>
+                    </div>
 
-              {/* Capabilities List */}
-              <div className="space-y-2.5 pt-2 border-t border-slate-200">
-                <div className="text-xs font-bold text-slate-900 uppercase tracking-wider">
-                  Engineered Deliverables:
-                </div>
-                {currentService.capabilities.map((cap, i) => (
-                  <div key={i} className="flex items-start gap-2 text-xs text-slate-700">
-                    <span className="w-4 h-4 rounded-full bg-teal-100 text-teal-800 flex items-center justify-center shrink-0 mt-0.5">
-                      <Check className="w-2.5 h-2.5 stroke-[3]" />
-                    </span>
-                    <span className="font-medium">{cap}</span>
+                    {/* Capabilities List */}
+                    <div className="space-y-2.5 pt-2 border-t border-slate-200">
+                      <div className="text-xs font-bold text-slate-900 uppercase tracking-wider">
+                        Engineered Deliverables:
+                      </div>
+                      {service.capabilities.map((cap, i) => (
+                        <div key={i} className="flex items-start gap-2 text-xs text-slate-700">
+                          <span className="w-4 h-4 rounded-full bg-teal-100 text-teal-800 flex items-center justify-center shrink-0 mt-0.5">
+                            <Check className="w-2.5 h-2.5 stroke-[3]" />
+                          </span>
+                          <span className="font-medium">{cap}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Action Link & Metric */}
+                    <div className="pt-4 border-t border-slate-200 flex items-center justify-between">
+                      <Link
+                        href={`/audit?service=${service.id}`}
+                        className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-slate-900 hover:text-brand-accent transition-colors"
+                      >
+                        <span>Audit Your Setup</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </Link>
+
+                      <span className="text-[11px] font-mono font-bold px-2.5 py-1 rounded-md bg-white border border-slate-200 text-teal-700">
+                        {service.outcomeMetric}
+                      </span>
+                    </div>
                   </div>
-                ))}
+
+                  {/* Right: Clean Browser Mockup Frame with ZERO Overlay Text */}
+                  <div className="lg:col-span-7 flex flex-col bg-slate-950 border-t lg:border-t-0 lg:border-l border-slate-200/80">
+                    {/* Browser Chrome Header */}
+                    <div className="px-4 py-2.5 bg-slate-900 border-b border-slate-800 flex items-center justify-between gap-3">
+                      <div className="flex items-center gap-1.5">
+                        <span className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
+                        <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
+                        <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
+                      </div>
+
+                      <div className="flex-1 max-w-xs mx-auto px-3 py-0.5 rounded-md bg-slate-950/80 border border-slate-800 text-[11px] text-slate-300 font-mono flex items-center justify-center gap-1.5 truncate">
+                        <Lock className="w-3 h-3 text-teal-400 shrink-0" />
+                        <span className="text-teal-300">https://</span>
+                        <span className="truncate">{service.displayUrl}</span>
+                      </div>
+
+                      <span className="text-[10px] font-mono text-teal-400 font-bold">
+                        SETU
+                      </span>
+                    </div>
+
+                    {/* Pure Image Container */}
+                    <div className="relative aspect-[16/10] w-full flex-1 min-h-[300px] lg:min-h-[440px] bg-slate-950">
+                      <Image
+                        src={service.imageSrc}
+                        alt={`${service.title} Interface Dashboard`}
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 60vw"
+                        className="object-cover object-top"
+                        priority
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
-
-              {/* Action Link & Metric */}
-              <div className="pt-4 border-t border-slate-200 flex items-center justify-between">
-                <Link
-                  href={currentService.href}
-                  className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-slate-900 hover:text-brand-accent transition-colors"
-                >
-                  <span>Explore {currentService.title}</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </Link>
-
-                <span className="text-[11px] font-mono font-bold px-2.5 py-1 rounded-md bg-white border border-slate-200 text-teal-700">
-                  {currentService.outcomeMetric}
-                </span>
-              </div>
-            </div>
-
-            {/* Right: Real UI Interface Image Preview */}
-            <div className="lg:col-span-7 relative aspect-[16/10] bg-slate-950 overflow-hidden min-h-[320px] lg:min-h-[460px] border-t lg:border-t-0 lg:border-l border-slate-200/80">
-              <Image
-                src={currentService.imageSrc}
-                alt={`${currentService.title} Interface Dashboard`}
-                fill
-                sizes="(max-width: 1024px) 100vw, 60vw"
-                className="object-cover object-top transition-transform duration-700 ease-out hover:scale-105"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent pointer-events-none" />
-
-              {/* Bottom In-Image Tag */}
-              <div className="absolute bottom-4 left-4 right-4 z-10 flex items-center justify-between text-white text-xs">
-                <span className="font-mono text-[11px] text-teal-300 drop-shadow-xs">
-                  SETU Production Deliverable
-                </span>
-                <span className="text-[10px] text-slate-300">
-                  Live UI Dashboard Preview
-                </span>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </Container>
