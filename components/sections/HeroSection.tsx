@@ -1,14 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import {
   ArrowRight,
-  ChevronLeft,
-  ChevronRight,
   Globe,
   MapPin,
   MessageSquare,
@@ -17,11 +15,14 @@ import {
   Activity,
   Flame,
   GraduationCap,
+  ExternalLink,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export const HeroSection: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const autoPlayRef = useRef<NodeJS.Timeout | null>(null);
 
   const previewTabs = [
     {
@@ -32,40 +33,61 @@ export const HeroSection: React.FC = () => {
       imageSrc: "/images/system-flowchart.jpg",
       highlight: "Zero Lead Leakage",
       summary: "How search visitors automatically turn into confirmed bookings on your calendar.",
+      liveUrl: "/#work",
     },
     {
-      id: "dental",
-      label: "Dental Clinic",
+      id: "care-clinic",
+      label: "CARE CLINIC",
       icon: <Activity className="w-3.5 h-3.5" />,
-      title: "Apex Smile Dental Studio",
+      title: "CARE CLINIC — Healthcare Portal",
       imageSrc: "/images/projects/dental-clinic.jpg",
       highlight: "-68% No-Shows · Top 3 Google Maps",
-      summary: "Transparent treatment pricing with 24/7 automated WhatsApp slot booking.",
+      summary: "Transparent doctor consultation fees with 24/7 automated WhatsApp slot booking.",
+      liveUrl: "https://client-wheat-seven-38.vercel.app/",
     },
     {
-      id: "fitness",
-      label: "Fitness Studio",
+      id: "aura-fitness",
+      label: "AURA FITNESS",
       icon: <Flame className="w-3.5 h-3.5" />,
-      title: "Elevate Athletic Club",
+      title: "AURA FITNESS — Luxury Health Club",
       imageSrc: "/images/projects/fitness-studio.jpg",
       highlight: "+4.8x VIP Passes Claimed",
-      summary: "Live class timetables with instant 1-Day Trial Pass delivery on WhatsApp.",
+      summary: "Live class timetables with instant 1-Day VIP Trial Pass delivery on WhatsApp.",
+      liveUrl: "https://gym-web-demo-beta.vercel.app/",
     },
     {
-      id: "education",
-      label: "Coaching Academy",
+      id: "edurise",
+      label: "EduRise Academy",
       icon: <GraduationCap className="w-3.5 h-3.5" />,
-      title: "Shikhar Learning Academy",
+      title: "EduRise Academy — Admissions Engine",
       imageSrc: "/images/projects/coaching-academy.jpg",
       highlight: "Instant 5s Prospectus Delivery",
       summary: "Top rankers gallery and automated syllabus & fee PDF delivery to parents.",
+      liveUrl: "https://edurise-js16rxcct-amitrajput111s-projects.vercel.app/",
     },
   ];
 
   const current = previewTabs[activeTab];
 
+  // Auto-sliding timer (5.5s interval)
+  useEffect(() => {
+    if (isPaused) return;
+
+    autoPlayRef.current = setInterval(() => {
+      setActiveTab((prev) => (prev === previewTabs.length - 1 ? 0 : prev + 1));
+    }, 5500);
+
+    return () => {
+      if (autoPlayRef.current) clearInterval(autoPlayRef.current);
+    };
+  }, [isPaused, previewTabs.length]);
+
   return (
-    <section className="relative pt-10 pb-16 sm:pt-16 sm:pb-24 bg-[#F8FAFC] border-b border-slate-200/80 overflow-hidden">
+    <section
+      className="relative pt-10 pb-16 sm:pt-16 sm:pb-24 bg-[#F8FAFC] border-b border-slate-200/80 overflow-hidden"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
       <Container size="xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           {/* LEFT: Core Value & Action */}
@@ -100,7 +122,7 @@ export const HeroSection: React.FC = () => {
               <Button
                 variant="secondary"
                 size="lg"
-                href="/work"
+                href="/#work"
                 className="font-semibold"
               >
                 See Our Work
@@ -124,7 +146,7 @@ export const HeroSection: React.FC = () => {
             </div>
           </div>
 
-          {/* RIGHT: Live Visual Showcase */}
+          {/* RIGHT: Live Visual Showcase Slider */}
           <div className="lg:col-span-6">
             <div className="bg-slate-950 rounded-3xl border border-slate-800 shadow-2xl overflow-hidden text-white">
               {/* Tab Selector Header */}
@@ -148,8 +170,20 @@ export const HeroSection: React.FC = () => {
                 </div>
 
                 <span className="text-[10px] font-mono text-teal-400 hidden sm:inline shrink-0 pr-1">
-                  Live Preview
+                  {isPaused ? "Paused" : "Auto"}
                 </span>
+              </div>
+
+              {/* Progress Line */}
+              <div className="w-full h-0.5 bg-slate-800 relative overflow-hidden">
+                <div
+                  key={activeTab}
+                  className={cn(
+                    "h-full bg-teal-400 transition-all duration-[5500ms] ease-linear",
+                    isPaused ? "opacity-40" : "w-full"
+                  )}
+                  style={{ width: isPaused ? "100%" : undefined }}
+                />
               </div>
 
               {/* Visual 16:9 Image Viewport */}
@@ -162,27 +196,37 @@ export const HeroSection: React.FC = () => {
                   className="object-cover object-top transition-all duration-500"
                   priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-black/20 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-black/20 pointer-events-none" />
 
                 {/* Top Badge */}
                 <div className="absolute top-3.5 left-3.5 z-10">
-                  <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md bg-slate-950/80 backdrop-blur-xs text-teal-300 border border-teal-500/30">
+                  <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md bg-slate-950/90 backdrop-blur-xs text-teal-300 border border-teal-500/30">
                     {current.highlight}
                   </span>
                 </div>
 
-                {/* Bottom Caption */}
-                <div className="absolute bottom-3.5 left-3.5 right-3.5 z-10 flex items-center justify-between text-xs">
+                {/* Bottom Caption Bar */}
+                <div className="absolute bottom-3.5 left-3.5 right-3.5 z-10 flex items-center justify-between text-xs bg-slate-950/70 p-2 rounded-xl backdrop-blur-xs border border-white/10">
                   <span className="text-slate-300 text-[11px] truncate max-w-[75%]">
                     {current.summary}
                   </span>
-                  <Link
-                    href="/work"
-                    className="text-teal-400 hover:text-teal-300 font-bold text-xs shrink-0 flex items-center gap-0.5"
-                  >
-                    <span>View</span>
-                    <ArrowRight className="w-3 h-3" />
-                  </Link>
+                  {current.liveUrl.startsWith("http") ? (
+                    <a
+                      href={current.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-teal-300 hover:text-white font-bold text-xs shrink-0 flex items-center gap-1"
+                    >
+                      <span>Live ↗</span>
+                    </a>
+                  ) : (
+                    <Link
+                      href={current.liveUrl}
+                      className="text-teal-300 hover:text-white font-bold text-xs shrink-0 flex items-center gap-0.5"
+                    >
+                      <span>Explore &rarr;</span>
+                    </Link>
+                  )}
                 </div>
               </div>
             </div>

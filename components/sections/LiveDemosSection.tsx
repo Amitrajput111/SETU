@@ -1,14 +1,16 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
-import { ArrowRight, ChevronLeft, ChevronRight, Sparkles, Activity, Flame, GraduationCap, MapPin, ExternalLink } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, Sparkles, Activity, Flame, GraduationCap, MapPin, ExternalLink, Play, Pause } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export const LiveDemosSection: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const autoPlayRef = useRef<NodeJS.Timeout | null>(null);
 
   const projects = [
     {
@@ -69,6 +71,19 @@ export const LiveDemosSection: React.FC = () => {
 
   const current = projects[activeIndex];
 
+  // Auto-sliding timer (5.5s interval)
+  useEffect(() => {
+    if (isPaused) return;
+
+    autoPlayRef.current = setInterval(() => {
+      setActiveIndex((prev) => (prev === projects.length - 1 ? 0 : prev + 1));
+    }, 5500);
+
+    return () => {
+      if (autoPlayRef.current) clearInterval(autoPlayRef.current);
+    };
+  }, [isPaused, projects.length]);
+
   const handlePrev = () => {
     setActiveIndex((prev) => (prev === 0 ? projects.length - 1 : prev - 1));
   };
@@ -78,14 +93,21 @@ export const LiveDemosSection: React.FC = () => {
   };
 
   return (
-    <section className="py-20 sm:py-28 bg-[#F8FAFC] border-b border-slate-200/80 scroll-mt-16 sm:scroll-mt-20" id="work">
+    <section
+      className="py-20 sm:py-28 bg-[#F8FAFC] border-b border-slate-200/80 scroll-mt-16 sm:scroll-mt-20"
+      id="work"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
       <Container size="xl">
-        {/* Section Header with Slide Controls */}
+        {/* Section Header with Slide Controls & Auto Indicator */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-slate-200 text-slate-800 mb-3">
               <Sparkles className="w-3.5 h-3.5 text-brand-accent" />
               <span>Live Production Demos</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-teal-600 animate-pulse ml-1" />
+              <span className="text-[10px] text-teal-700 font-mono font-bold">Auto-Slide</span>
             </div>
             <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
               Work that makes businesses look better — and work better.
@@ -126,7 +148,7 @@ export const LiveDemosSection: React.FC = () => {
               className={cn(
                 "px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-150 flex items-center gap-2",
                 activeIndex === idx
-                  ? "bg-slate-900 text-white shadow-sm"
+                  ? "bg-slate-900 text-white shadow-sm scale-[1.01]"
                   : "bg-white text-slate-600 border border-slate-200/90 hover:bg-slate-50 hover:text-slate-900"
               )}
             >
@@ -136,11 +158,23 @@ export const LiveDemosSection: React.FC = () => {
           ))}
         </div>
 
-        {/* Showcase Slider Card */}
+        {/* Showcase Slider Card (Zero Text Merging / Perfect Split) */}
         <div className="bg-white rounded-3xl border border-slate-200/90 shadow-card overflow-hidden">
+          {/* Animated Auto-Slide Progress Bar */}
+          <div className="w-full h-1 bg-slate-100 relative overflow-hidden">
+            <div
+              key={activeIndex}
+              className={cn(
+                "h-full bg-brand-accent transition-all duration-[5500ms] ease-linear",
+                isPaused ? "opacity-40" : "w-full"
+              )}
+              style={{ width: isPaused ? "100%" : undefined }}
+            />
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 items-stretch">
-            {/* Left Column: 16:9 UI Image Preview */}
-            <div className="lg:col-span-7 relative aspect-[16/10] bg-slate-950 overflow-hidden min-h-[300px] lg:min-h-[420px]">
+            {/* Left Column: 16:10 UI Image Preview */}
+            <div className="lg:col-span-7 relative aspect-[16/10] bg-slate-950 overflow-hidden min-h-[300px] lg:min-h-[440px] border-b lg:border-b-0 lg:border-r border-slate-200/80">
               <Image
                 src={current.imageSrc}
                 alt={`${current.title} UI Preview`}
@@ -149,19 +183,19 @@ export const LiveDemosSection: React.FC = () => {
                 className="object-cover object-top transition-transform duration-700 ease-out hover:scale-105"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-black/20 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-black/20 pointer-events-none" />
 
               <div className="absolute top-3.5 left-3.5 z-10 flex items-center gap-2">
-                <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md bg-slate-950/80 backdrop-blur-xs text-teal-300 border border-teal-500/30">
+                <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md bg-slate-950/90 backdrop-blur-xs text-teal-300 border border-teal-500/30">
                   Live Production Demo
                 </span>
               </div>
 
               <div className="absolute bottom-3.5 left-3.5 right-3.5 z-10 flex items-center justify-between text-white text-xs">
-                <span className="font-semibold text-teal-300 text-xs sm:text-sm">
+                <span className="font-semibold text-teal-300 text-xs sm:text-sm drop-shadow-xs">
                   {current.category}
                 </span>
-                <span className="text-[11px] text-slate-300 flex items-center gap-1">
+                <span className="text-[11px] text-slate-300 flex items-center gap-1 bg-slate-950/70 px-2 py-0.5 rounded-md backdrop-blur-xs">
                   <MapPin className="w-3.5 h-3.5" />
                   <span>{current.location}</span>
                 </span>
@@ -171,7 +205,7 @@ export const LiveDemosSection: React.FC = () => {
             {/* Right Column: Clean 3-Line Teardown */}
             <div className="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between space-y-5 bg-slate-50/40">
               <div className="space-y-4">
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between gap-3">
                   <div>
                     <span className="text-[11px] font-bold uppercase tracking-wider text-brand-accent">
                       {current.category}
@@ -184,7 +218,7 @@ export const LiveDemosSection: React.FC = () => {
                     href={current.liveDemoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-teal-50 hover:bg-teal-100 text-teal-800 text-xs font-bold border border-teal-200 transition-colors"
+                    className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-teal-50 hover:bg-teal-100 text-teal-800 text-xs font-bold border border-teal-200 transition-colors shrink-0"
                   >
                     <span>Live Demo</span>
                     <ExternalLink className="w-3 h-3" />
@@ -193,13 +227,13 @@ export const LiveDemosSection: React.FC = () => {
 
                 {/* Concise 3 Lines of Text */}
                 <div className="space-y-2.5 text-xs sm:text-sm text-slate-700 leading-relaxed font-normal">
-                  <p className="p-2.5 rounded-xl bg-white border border-slate-200/80 text-slate-600">
+                  <p className="p-3 rounded-xl bg-white border border-slate-200/90 text-slate-600 shadow-2xs">
                     <strong className="text-slate-900">Context:</strong> {current.summaryLine1}
                   </p>
-                  <p className="p-2.5 rounded-xl bg-white border border-slate-200/80 text-slate-600">
+                  <p className="p-3 rounded-xl bg-white border border-slate-200/90 text-slate-600 shadow-2xs">
                     <strong className="text-slate-900">SETU System:</strong> {current.summaryLine2}
                   </p>
-                  <p className="p-2.5 rounded-xl bg-teal-50/80 border border-teal-100 text-teal-950 font-medium">
+                  <p className="p-3 rounded-xl bg-teal-50/80 border border-teal-100 text-teal-950 font-medium shadow-2xs">
                     <strong className="text-teal-900">Verified Result:</strong> {current.summaryLine3}
                   </p>
                 </div>
@@ -207,7 +241,7 @@ export const LiveDemosSection: React.FC = () => {
                 {/* 3 Metric Badges */}
                 <div className="grid grid-cols-3 gap-2 pt-1">
                   {current.metrics.map((m, i) => (
-                    <div key={i} className="p-2 rounded-xl bg-white border border-slate-200 text-center">
+                    <div key={i} className="p-2.5 rounded-xl bg-white border border-slate-200 text-center shadow-2xs">
                       <div className="text-[10px] text-slate-400 font-medium truncate">{m.label}</div>
                       <div className="text-xs sm:text-sm font-bold text-slate-900 font-mono mt-0.5">{m.value}</div>
                     </div>
@@ -238,19 +272,24 @@ export const LiveDemosSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Slide Indicator Dots */}
-        <div className="flex justify-center items-center gap-2 mt-6">
-          {projects.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => setActiveIndex(idx)}
-              aria-label={`Go to slide ${idx + 1}`}
-              className={cn(
-                "h-2 rounded-full transition-all duration-200",
-                activeIndex === idx ? "w-8 bg-brand-accent" : "w-2 bg-slate-300 hover:bg-slate-400"
-              )}
-            />
-          ))}
+        {/* Slide Indicator Dots with Play/Pause state */}
+        <div className="flex justify-center items-center gap-3 mt-6">
+          <div className="flex items-center gap-2">
+            {projects.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setActiveIndex(idx)}
+                aria-label={`Go to slide ${idx + 1}`}
+                className={cn(
+                  "h-2 rounded-full transition-all duration-300",
+                  activeIndex === idx ? "w-8 bg-brand-accent" : "w-2 bg-slate-300 hover:bg-slate-400"
+                )}
+              />
+            ))}
+          </div>
+          <span className="text-[11px] text-slate-400 font-mono">
+            {isPaused ? "(Paused on hover)" : "(Auto-sliding)"}
+          </span>
         </div>
       </Container>
     </section>

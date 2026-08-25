@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
@@ -10,6 +10,8 @@ import { cn } from "@/lib/utils";
 
 export const ServicesGrid: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const autoPlayRef = useRef<NodeJS.Timeout | null>(null);
 
   const services = [
     {
@@ -101,6 +103,19 @@ export const ServicesGrid: React.FC = () => {
 
   const currentService = services[activeTab];
 
+  // Auto-sliding timer (5.5s interval)
+  useEffect(() => {
+    if (isPaused) return;
+
+    autoPlayRef.current = setInterval(() => {
+      setActiveTab((prev) => (prev === services.length - 1 ? 0 : prev + 1));
+    }, 5500);
+
+    return () => {
+      if (autoPlayRef.current) clearInterval(autoPlayRef.current);
+    };
+  }, [isPaused, services.length]);
+
   const handlePrev = () => {
     setActiveTab((prev) => (prev === 0 ? services.length - 1 : prev - 1));
   };
@@ -110,7 +125,12 @@ export const ServicesGrid: React.FC = () => {
   };
 
   return (
-    <section className="py-20 sm:py-28 bg-white border-b border-slate-200/80 scroll-mt-16 sm:scroll-mt-20" id="services">
+    <section
+      className="py-20 sm:py-28 bg-white border-b border-slate-200/80 scroll-mt-16 sm:scroll-mt-20"
+      id="services"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
       <Container size="xl">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
@@ -175,8 +195,20 @@ export const ServicesGrid: React.FC = () => {
           })}
         </div>
 
-        {/* Visual Showcase Box (Split Layout) */}
+        {/* Visual Showcase Box (Split Layout with Progress Bar) */}
         <div className="bg-[#F8FAFC] rounded-3xl border border-slate-200/90 shadow-card overflow-hidden">
+          {/* Animated Auto-Slide Progress Bar */}
+          <div className="w-full h-1 bg-slate-200 relative overflow-hidden">
+            <div
+              key={activeTab}
+              className={cn(
+                "h-full bg-brand-accent transition-all duration-[5500ms] ease-linear",
+                isPaused ? "opacity-40" : "w-full"
+              )}
+              style={{ width: isPaused ? "100%" : undefined }}
+            />
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 items-center">
             {/* Left: Capability Breakdown */}
             <div className="lg:col-span-5 p-7 sm:p-10 space-y-6">
@@ -224,7 +256,7 @@ export const ServicesGrid: React.FC = () => {
             </div>
 
             {/* Right: Real UI Interface Image Preview */}
-            <div className="lg:col-span-7 relative aspect-[16/10] bg-slate-950 overflow-hidden min-h-[320px] lg:min-h-[460px] border-l border-slate-200/80">
+            <div className="lg:col-span-7 relative aspect-[16/10] bg-slate-950 overflow-hidden min-h-[320px] lg:min-h-[460px] border-t lg:border-t-0 lg:border-l border-slate-200/80">
               <Image
                 src={currentService.imageSrc}
                 alt={`${currentService.title} Interface Dashboard`}
