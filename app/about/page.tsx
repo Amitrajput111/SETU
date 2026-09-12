@@ -19,9 +19,9 @@ import {
 import { FinalCTASection } from "@/components/sections/FinalCTASection";
 
 export const metadata: Metadata = {
-  title: "About SETU — The Bridge Between Business & Technology",
+  title: "About TechGrowX — The Bridge Between Business & Technology",
   description:
-    "Learn about SETU's mission, engineering philosophy, and vision to bridge traditional businesses with high-speed digital systems and AI automation.",
+    "Learn about TechGrowX's mission, engineering philosophy, and vision to bridge traditional businesses with high-speed digital systems and AI automation.",
 };
 
 export default function AboutPage() {
@@ -75,7 +75,7 @@ export default function AboutPage() {
               Building the Bridge Between Business and Modern Technology
             </h1>
             <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
-              &ldquo;Setu&rdquo; is the Sanskrit word for bridge. We exist to connect traditional businesses with high-converting digital presence and practical AI automation.
+              &ldquo;TechGrowX&rdquo; is the Sanskrit word for bridge. We exist to connect traditional businesses with high-converting digital presence and practical AI automation.
             </p>
           </div>
         </Container>
@@ -85,7 +85,7 @@ export default function AboutPage() {
       <section className="py-16 sm:py-24 bg-white border-b border-slate-200/80">
         <Container size="xl">
           <SectionHeading
-            eyebrow="The SETU Purpose"
+            eyebrow="The TechGrowX Purpose"
             title="What We Connect"
             description="Traditional businesses often struggle not from a lack of quality, but because their digital touchpoints are disconnected from customer expectations."
           />

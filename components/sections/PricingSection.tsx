@@ -17,7 +17,7 @@ export const PricingSection: React.FC = () => {
         "Mobile Responsive Design",
         "Direct Click-to-WhatsApp Funnel",
         "Basic On-Page SEO & Google Maps Link",
-        "Edge Hosting Setup + Free SSL",
+        "Edge Hosting TechGrowXp + Free SSL",
       ],
       isPopular: false,
     },

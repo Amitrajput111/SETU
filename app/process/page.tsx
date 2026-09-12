@@ -21,7 +21,7 @@ import {
 import { FinalCTASection } from "@/components/sections/FinalCTASection";
 
 export const metadata: Metadata = {
-  title: "Process — The 5-Stage SETU Execution Framework",
+  title: "Process — The 5-Stage TechGrowX Execution Framework",
   description:
     "Explore our transparent 5-stage execution process: Audit, Strategy, Build, Launch, and Continuous Growth.",
 };

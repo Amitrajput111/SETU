@@ -6,7 +6,7 @@ import { FinalCTASection } from "@/components/sections/FinalCTASection";
 import { Sparkles } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Frequently Asked Questions — SETU Digital Growth & Automation",
+  title: "Frequently Asked Questions — TechGrowX Digital Growth & Automation",
   description:
     "Find answers to all your questions about website costs, development timelines, WhatsApp integrations, AI automations, and post-launch maintenance.",
 };

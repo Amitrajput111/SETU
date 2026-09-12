@@ -8,7 +8,7 @@ export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   const companyLinks = [
-    { name: "About SETU", href: "/about" },
+    { name: "About TechGrowX", href: "/about" },
     { name: "Our Work", href: "/work" },
     { name: "5-Stage Process", href: "/process" },
     { name: "Pricing Tiers", href: "/pricing" },
@@ -116,7 +116,7 @@ export const Footer: React.FC = () => {
         {/* Bottom Bar: Copyright & Social */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <div>
-            &copy; {currentYear} SETU. Digital Growth &amp; Intelligent Automation.
+            &copy; {currentYear} TechGrowX. Digital Growth &amp; Intelligent Automation.
           </div>
 
           <div className="flex items-center gap-5">
@@ -131,7 +131,7 @@ export const Footer: React.FC = () => {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="SETU on LinkedIn"
+                aria-label="TechGrowX on LinkedIn"
                 className="text-slate-400 hover:text-white transition-colors"
               >
                 <Linkedin className="w-4 h-4" />
@@ -140,7 +140,7 @@ export const Footer: React.FC = () => {
                 href="https://github.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="SETU on GitHub"
+                aria-label="TechGrowX on GitHub"
                 className="text-slate-400 hover:text-white transition-colors"
               >
                 <Github className="w-4 h-4" />
@@ -149,7 +149,7 @@ export const Footer: React.FC = () => {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="SETU on Instagram"
+                aria-label="TechGrowX on Instagram"
                 className="text-slate-400 hover:text-white transition-colors"
               >
                 <Instagram className="w-4 h-4" />

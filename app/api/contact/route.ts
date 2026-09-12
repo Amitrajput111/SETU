@@ -53,7 +53,7 @@ export async function POST(req: NextRequest) {
         },
       });
     } catch (dbError) {
-      console.error("[SETU_CONTACT_DB_ERROR]", dbError);
+      console.error("[TechGrowX_CONTACT_DB_ERROR]", dbError);
       const fallbackId = `MSG-${Date.now().toString(36).toUpperCase()}`;
       return NextResponse.json({
         success: true,
@@ -68,7 +68,7 @@ export async function POST(req: NextRequest) {
       message: "Message received successfully.",
     });
   } catch (error: unknown) {
-    console.error("[SETU_CONTACT_API_ERROR]", error);
+    console.error("[TechGrowX_CONTACT_API_ERROR]", error);
     return NextResponse.json(
       { error: "An unexpected error occurred while sending your message." },
       { status: 500 }

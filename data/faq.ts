@@ -9,7 +9,7 @@ export const FAQ_DATA: FAQItem[] = [
   {
     id: "cost",
     category: "Pricing & Scope",
-    question: "How much does a website or digital system cost with SETU?",
+    question: "How much does a website or digital system cost with TechGrowX?",
     answer: "Our single-page Starter systems begin at ₹10,000, our full Business growth platforms start at ₹20,000, and comprehensive Growth + AI Automation systems start at ₹30,000+. Final pricing depends on your exact requirements (number of custom pages, booking integrations, AI complexity). We provide a fixed, transparent quote after your free digital audit before any work begins.",
   },
   {
@@ -22,7 +22,7 @@ export const FAQ_DATA: FAQItem[] = [
     id: "location",
     category: "Support & General",
     question: "Do you work with businesses outside Indore?",
-    answer: "Yes, absolutely. While SETU is headquartered in Indore (Central India), we work seamlessly with growing businesses across India and internationally. All strategy calls, milestone reviews, and onboarding sessions are conducted via Google Meet, screen shares, and dedicated WhatsApp communication channels.",
+    answer: "Yes, absolutely. While TechGrowX is headquartered in Indore (Central India), we work seamlessly with growing businesses across India and internationally. All strategy calls, milestone reviews, and onboarding sessions are conducted via Google Meet, screen shares, and dedicated WhatsApp communication channels.",
   },
   {
     id: "redesign",
@@ -57,13 +57,13 @@ export const FAQ_DATA: FAQItem[] = [
   {
     id: "social-media",
     category: "SEO & Growth",
-    question: "Can SETU also help with social media and digital presence?",
+    question: "Can TechGrowX also help with social media and digital presence?",
     answer: "Yes. We design high-trust profile branding, link-in-bio mobile hubs, 30-day repeatable content frameworks, and Instagram DM-to-WhatsApp auto-responders that turn casual social media followers into booked appointments.",
   },
   {
     id: "domain-hosting",
     category: "Pricing & Scope",
     question: "Do I need to buy domain and hosting separately?",
-    answer: "If you already own a domain (e.g. on GoDaddy or Namecheap), we will connect it to your new website for free. If you do not have one, we will guide you on purchasing your preferred .com or .in domain. We configure ultra-fast global edge cloud hosting with free SSL included in your setup.",
+    answer: "If you already own a domain (e.g. on GoDaddy or Namecheap), we will connect it to your new website for free. If you do not have one, we will guide you on purchasing your preferred .com or .in domain. We configure ultra-fast global edge cloud hosting with free SSL included in your TechGrowXp.",
   },
 ];

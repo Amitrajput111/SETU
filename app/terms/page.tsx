@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 
 export const metadata: Metadata = {
-  title: "Terms of Service — SETU Digital Growth & Automation",
-  description: "Terms and conditions governing the use of SETU website and services.",
+  title: "Terms of Service — TechGrowX Digital Growth & Automation",
+  description: "Terms and conditions governing the use of TechGrowX website and services.",
 };
 
 export default function TermsPage() {
@@ -21,17 +21,17 @@ export default function TermsPage() {
 
           <div className="prose prose-slate text-xs sm:text-sm leading-relaxed text-slate-600 space-y-6">
             <p>
-              Welcome to <strong>SETU (&ldquo;SETU Digital Growth & Automation&rdquo;)</strong>. By accessing our website, requesting a free audit, or engaging our digital engineering services, you agree to these Terms of Service.
+              Welcome to <strong>TechGrowX (&ldquo;TechGrowX Digital Growth & Automation&rdquo;)</strong>. By accessing our website, requesting a free audit, or engaging our digital engineering services, you agree to these Terms of Service.
             </p>
 
             <h2 className="text-base font-bold text-slate-900">1. Scope of Services</h2>
             <p>
-              SETU provides digital website development, local SEO optimization, lead generation workflows, and AI automation engineering. All specific project deliverables, timelines, and payment terms are detailed in writing prior to project kickoff.
+              TechGrowX provides digital website development, local SEO optimization, lead generation workflows, and AI automation engineering. All specific project deliverables, timelines, and payment terms are detailed in writing prior to project kickoff.
             </p>
 
             <h2 className="text-base font-bold text-slate-900">2. Honest Positioning & Disclaimers</h2>
             <p>
-              SETU does not make fraudulent guarantees regarding specific revenue figures or guaranteed #1 positions on search engines, as third-party algorithms (Google, Meta) are governed independently. We guarantee professional engineering, technical performance (speed, SEO schema), and proper integration of automation workflows.
+              TechGrowX does not make fraudulent guarantees regarding specific revenue figures or guaranteed #1 positions on search engines, as third-party algorithms (Google, Meta) are governed independently. We guarantee professional engineering, technical performance (speed, SEO schema), and proper integration of automation workflows.
             </p>
 
             <h2 className="text-base font-bold text-slate-900">3. Intellectual Property</h2>

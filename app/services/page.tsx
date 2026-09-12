@@ -21,7 +21,7 @@ import { FinalCTASection } from "@/components/sections/FinalCTASection";
 export const metadata: Metadata = {
   title: "Services — High-Speed Websites, Local SEO & AI Automation",
   description:
-    "Explore SETU's 5 core growth services: High-Performance Websites, Google Maps Local SEO, Social Branding, WhatsApp Lead Capture, and AI Calendar Automation.",
+    "Explore TechGrowX's 5 core growth services: High-Performance Websites, Google Maps Local SEO, Social Branding, WhatsApp Lead Capture, and AI Calendar Automation.",
 };
 
 export default function ServicesPage() {
@@ -122,7 +122,7 @@ export default function ServicesPage() {
               Engineered Services to Acquire, Convert & Automate
             </h1>
             <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
-              Explore the 5 core capabilities engineered into every SETU growth system. Clean, fast, and visual.
+              Explore the 5 core capabilities engineered into every TechGrowX growth system. Clean, fast, and visual.
             </p>
 
             {/* Quick-Jump Pills */}
@@ -199,7 +199,7 @@ export default function ServicesPage() {
                         href={`/audit?service=${service.id}`}
                         rightIcon={<ArrowRight className="w-3.5 h-3.5" />}
                       >
-                        Audit My Setup
+                        Audit My TechGrowXp
                       </Button>
 
                       <Link
@@ -225,7 +225,7 @@ export default function ServicesPage() {
 
                     <div className="absolute bottom-4 left-4 right-4 z-10 flex items-center justify-between text-white text-xs">
                       <span className="font-mono text-[11px] text-teal-300 drop-shadow-xs">
-                        SETU Production Deliverable
+                        TechGrowX Production Deliverable
                       </span>
                       <span className="text-[10px] text-slate-300">
                         {service.title}

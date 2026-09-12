@@ -68,7 +68,7 @@ export async function POST(req: NextRequest) {
         },
       });
     } catch (dbError) {
-      console.error("[SETU_AUDIT_DB_ERROR]", dbError);
+      console.error("[TechGrowX_AUDIT_DB_ERROR]", dbError);
       // Even if DB has an issue during runtime, return fallback reference ID so user experience doesn't break
       const fallbackId = `AUDIT-${Date.now().toString(36).toUpperCase()}`;
       return NextResponse.json({
@@ -84,7 +84,7 @@ export async function POST(req: NextRequest) {
       message: "Audit request received and queued for review.",
     });
   } catch (error: unknown) {
-    console.error("[SETU_AUDIT_API_ERROR]", error);
+    console.error("[TechGrowX_AUDIT_API_ERROR]", error);
     return NextResponse.json(
       { error: "An unexpected error occurred while processing your request." },
       { status: 500 }

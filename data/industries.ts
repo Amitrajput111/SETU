@@ -9,7 +9,7 @@ export interface IndustryItem {
     heading: string;
     points: string[];
   };
-  setuSolution: {
+  TechGrowXSolution: {
     heading: string;
     points: string[];
   };
@@ -44,8 +44,8 @@ export const INDUSTRIES_DATA: IndustryItem[] = [
         "Manual appointment books lead to double bookings and lost follow-up reviews.",
       ],
     },
-    setuSolution: {
-      heading: "The SETU Healthcare Growth System",
+    TechGrowXSolution: {
+      heading: "The TechGrowX Healthcare Growth System",
       points: [
         "Ultra-fast clinic website with doctor credentials, treatment pricing guides, and clean visuals.",
         "Google Business Profile optimization to rank #1 in the clinic's local 10 km radius.",
@@ -88,8 +88,8 @@ export const INDUSTRIES_DATA: IndustryItem[] = [
         "Membership renewal reminders are sent manually, leading to delayed payments and drop-outs.",
       ],
     },
-    setuSolution: {
-      heading: "The SETU Fitness Conversion Engine",
+    TechGrowXSolution: {
+      heading: "The TechGrowX Fitness Conversion Engine",
       points: [
         "High-energy, modern website featuring virtual studio tour, trainer bios, and trial pass booking.",
         "Instant Instagram DM to WhatsApp auto-funnel with dynamic class schedule & trial pass link.",
@@ -132,8 +132,8 @@ export const INDUSTRIES_DATA: IndustryItem[] = [
         "Manual tracking in notebooks or spreadsheets leads to missed counseling callbacks.",
       ],
     },
-    setuSolution: {
-      heading: "The SETU Education Admissions Engine",
+    TechGrowXSolution: {
+      heading: "The TechGrowX Education Admissions Engine",
       points: [
         "Clean, authoritative institute portal with verified faculty profiles, results, and curriculum overview.",
         "Frictionless 2-step demo class booking & scholarship test registration system.",

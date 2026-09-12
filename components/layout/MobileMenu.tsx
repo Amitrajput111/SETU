@@ -91,7 +91,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
           <Button
             variant="whatsapp"
             size="md"
-            href="https://wa.me/919109265673?text=Hi%20SETU%2C%20I%20would%20like%20to%20discuss%20digital%20growth%20for%20my%20business."
+            href="https://wa.me/919109265673?text=Hi%20TechGrowX%2C%20I%20would%20like%20to%20discuss%20digital%20growth%20for%20my%20business."
             isExternal
             className="w-full font-bold"
             leftIcon={<MessageCircle className="w-4 h-4" />}

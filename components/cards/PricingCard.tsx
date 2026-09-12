@@ -20,7 +20,7 @@ export interface PricingCardProps {
 export const PricingCard: React.FC<PricingCardProps> = ({
   name,
   price,
-  billingFrequency = "one-time setup",
+  billingFrequency = "one-time TechGrowXp",
   tagline,
   features,
   isPopular = false,

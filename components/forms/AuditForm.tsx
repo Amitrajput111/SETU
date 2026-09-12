@@ -128,7 +128,7 @@ export const AuditForm: React.FC<AuditFormProps> = ({
 
         <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
           <a
-            href={`https://wa.me/919109265673?text=Hi%20SETU%2C%20I%20just%20submitted%20the%20digital%20audit%20form${referenceId ? `%20(Ref%3A%20${referenceId})` : ""}.`}
+            href={`https://wa.me/919109265673?text=Hi%20TechGrowX%2C%20I%20just%20submitted%20the%20digital%20audit%20form${referenceId ? `%20(Ref%3A%20${referenceId})` : ""}.`}
             target="_blank"
             rel="noopener noreferrer"
             className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs sm:text-sm font-semibold transition-all shadow-sm"
@@ -407,9 +407,9 @@ export const AuditForm: React.FC<AuditFormProps> = ({
                 {...register("monthlyBudget")}
                 className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-brand-accent bg-slate-50/50 focus:bg-white"
               >
-                <option value="Starter (₹10,000 setup)">Starter Tier (₹10,000 setup)</option>
-                <option value="Business (₹20,000 setup)">Business Tier (₹20,000 setup)</option>
-                <option value="Growth + AI Automation (₹30,000+ setup)">Growth + AI Automation (₹30,000+ setup)</option>
+                <option value="Starter (₹10,000 TechGrowXp)">Starter Tier (₹10,000 TechGrowXp)</option>
+                <option value="Business (₹20,000 TechGrowXp)">Business Tier (₹20,000 TechGrowXp)</option>
+                <option value="Growth + AI Automation (₹30,000+ TechGrowXp)">Growth + AI Automation (₹30,000+ TechGrowXp)</option>
                 <option value="Monthly Retainer (₹5,000 - ₹12,000/mo)">Monthly Growth Retainer (₹5,000 – ₹12,000/mo)</option>
                 <option value="Custom Scope / Enterprise">Custom Scope / To be determined</option>
               </select>

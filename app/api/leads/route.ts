@@ -15,7 +15,7 @@ export async function GET(req: NextRequest) {
       leads,
     });
   } catch (error: unknown) {
-    console.error("[SETU_GET_LEADS_ERROR]", error);
+    console.error("[TechGrowX_GET_LEADS_ERROR]", error);
     return NextResponse.json({ total: 0, leads: [] });
   }
 }

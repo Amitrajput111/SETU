@@ -30,8 +30,8 @@ export const HeroSection: React.FC = () => {
       id: "pipeline",
       label: "Growth Pipeline",
       icon: <Globe className="w-3.5 h-3.5" />,
-      title: "SETU Connected Growth Pipeline",
-      displayUrl: "pipeline.setu.in",
+      title: "TechGrowX Connected Growth Pipeline",
+      displayUrl: "pipeline.techgrowx.in",
       imageSrc: "/images/system-flowchart.jpg",
       highlight: "Zero Lead Leakage",
       summary: "How search visitors automatically turn into confirmed bookings on your calendar.",
@@ -108,7 +108,7 @@ export const HeroSection: React.FC = () => {
             </h1>
 
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-xl font-normal">
-              SETU helps growing businesses build fast Next.js websites, dominate Google Maps, capture qualified leads on WhatsApp, and automate appointment workflows.
+              TechGrowX helps growing businesses build fast Next.js websites, dominate Google Maps, capture qualified leads on WhatsApp, and automate appointment workflows.
             </p>
 
             {/* CTAs */}

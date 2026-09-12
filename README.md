@@ -1,4 +1,4 @@
-# SETU — Digital Growth & Intelligent Automation Platform
+# TechGrowX — Digital Growth & Intelligent Automation Platform
 
 [![Next.js 14](https://img.shields.io/badge/Next.js-14.2-black?style=flat-square&logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
@@ -6,14 +6,14 @@
 [![Prisma](https://img.shields.io/badge/Prisma-5.22-2D3748?style=flat-square&logo=prisma)](https://www.prisma.io/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-emerald?style=flat-square)](LICENSE)
 
-> **"Setu"** means *bridge* in Sanskrit. SETU is a digital growth and intelligent automation company helping Indian SMBs and global clients bridge the critical gap between their local presence, search visibility, website speed, WhatsApp communication, and automated appointment workflows.
+> **"TechGrowX"** means *bridge* in Sanskrit. TechGrowX is a digital growth and intelligent automation company helping Indian SMBs and global clients bridge the critical gap between their local presence, search visibility, website speed, WhatsApp communication, and automated appointment workflows.
 
 ---
 
 ## 🚀 Live Demo & Overview
 
-- **Live Production URL**: [https://setu-platform-rust.vercel.app](https://setu-platform-rust.vercel.app)
-- **Repository**: [https://github.com/Amitrajput111/SETU](https://github.com/Amitrajput111/SETU)
+- **Live Production URL**: [https://TechGrowX-platform-rust.vercel.app](https://TechGrowX-platform-rust.vercel.app)
+- **Repository**: [https://github.com/Amitrajput111/TechGrowX](https://github.com/Amitrajput111/TechGrowX)
 
 ---
 
@@ -42,9 +42,9 @@
 ## 📂 Project Architecture
 
 ```text
-SETU/
+TechGrowX/
 ├── app/                        # Next.js 14 App Router
-│   ├── about/                  # About SETU & Founder philosophy
+│   ├── about/                  # About TechGrowX & Founder philosophy
 │   ├── api/                    # API Route Handlers (audit, contact, leads)
 │   ├── audit/                  # Interactive 12-point digital audit tool
 │   ├── contact/                # Direct inquiry & WhatsApp channel
@@ -72,12 +72,12 @@ SETU/
 
 ---
 
-## 💻 Local Development Setup
+## 💻 Local Development TechGrowXp
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/Amitrajput111/SETU.git
-cd SETU
+git clone https://github.com/Amitrajput111/TechGrowX.git
+cd TechGrowX
 ```
 
 ### 2. Install Dependencies
@@ -89,7 +89,7 @@ npm install
 Create a `.env` file in the root directory (refer to `.env.example`):
 ```env
 DATABASE_URL="file:./dev.db"
-NEXT_PUBLIC_APP_URL="https://setu-platform-rust.vercel.app"
+NEXT_PUBLIC_APP_URL="https://TechGrowX-platform-rust.vercel.app"
 NEXT_PUBLIC_WHATSAPP_NUMBER="919109265673"
 NEXT_PUBLIC_CONTACT_EMAIL="amitrajput98267313@gmail.com"
 ```
@@ -112,12 +112,12 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 Deploying to **Vercel** is seamless:
 
-1. Push your repository to GitHub: `https://github.com/Amitrajput111/SETU.git`
+1. Push your repository to GitHub: `https://github.com/Amitrajput111/TechGrowX.git`
 2. Log in to [Vercel](https://vercel.com/) and click **"Add New Project"**.
-3. Import the `SETU` repository.
+3. Import the `TechGrowX` repository.
 4. Set the environment variables in Vercel:
    - `DATABASE_URL`: Your database connection string (e.g. Vercel Postgres, Neon, or Turso SQLite).
-   - `NEXT_PUBLIC_APP_URL`: Your production domain (`https://setu-platform-rust.vercel.app`).
+   - `NEXT_PUBLIC_APP_URL`: Your production domain (`https://TechGrowX-platform-rust.vercel.app`).
    - `NEXT_PUBLIC_WHATSAPP_NUMBER`: Your business WhatsApp number (`919109265673`).
    - `NEXT_PUBLIC_CONTACT_EMAIL`: Your primary contact email (`amitrajput98267313@gmail.com`).
 5. Click **Deploy**. Vercel will automatically run `prisma generate && next build` and deploy your application globally on Edge infrastructure.
@@ -132,6 +132,6 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
 
 ## 🤝 Connect
 
-- **Production Platform**: [https://setu-platform-rust.vercel.app](https://setu-platform-rust.vercel.app)
+- **Production Platform**: [https://TechGrowX-platform-rust.vercel.app](https://TechGrowX-platform-rust.vercel.app)
 - **WhatsApp**: [+91 91092 65673](https://wa.me/919109265673)
 - **Email**: [amitrajput98267313@gmail.com](mailto:amitrajput98267313@gmail.com)

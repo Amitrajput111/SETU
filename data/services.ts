@@ -32,7 +32,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     deliverables: [
       "Custom responsive website (One-page or Multi-page)",
       "High-converting landing pages for specific services",
-      "Domain connection, SSL setup & cloud hosting configuration",
+      "Domain connection, SSL TechGrowXp & cloud hosting configuration",
       "Speed optimization (90+ Google PageSpeed score)",
       "Interactive enquiry and appointment booking forms",
     ],
@@ -84,7 +84,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     deliverables: [
       "Branded profile asset kit (banners, avatars, highlight covers)",
       "30-day repeatable content framework & caption templates",
-      "Automated DM-to-lead capture setup",
+      "Automated DM-to-lead capture TechGrowXp",
       "Custom branded Link-in-Bio mobile mini-hub",
     ],
     idealFor: "Growing businesses needing a respectable, modern visual presence that validates their credibility.",
@@ -108,7 +108,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     ],
     deliverables: [
       "Dedicated high-intent lead generation landing page",
-      "WhatsApp Business API / automated greeting & menu setup",
+      "WhatsApp Business API / automated greeting & menu TechGrowXp",
       "Real-time instant notification to owner/sales team on new lead",
       "Structured CRM pipeline dashboard integration",
     ],

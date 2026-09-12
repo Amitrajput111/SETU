@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — SETU Digital Growth & Automation",
-  description: "SETU Privacy Policy regarding client data, communication details, and digital audit information.",
+  title: "Privacy Policy — TechGrowX Digital Growth & Automation",
+  description: "TechGrowX Privacy Policy regarding client data, communication details, and digital audit information.",
 };
 
 export default function PrivacyPage() {
@@ -21,7 +21,7 @@ export default function PrivacyPage() {
 
           <div className="prose prose-slate text-xs sm:text-sm leading-relaxed text-slate-600 space-y-6">
             <p>
-              At <strong>SETU (&ldquo;SETU Digital Growth &amp; Automation&rdquo;)</strong>, we respect your privacy and are committed to protecting the personal and business data you share with us through our website, audit forms, or direct WhatsApp inquiries.
+              At <strong>TechGrowX (&ldquo;TechGrowX Digital Growth &amp; Automation&rdquo;)</strong>, we respect your privacy and are committed to protecting the personal and business data you share with us through our website, audit forms, or direct WhatsApp inquiries.
             </p>
 
             <h2 className="text-base font-bold text-slate-900">1. Information We Collect</h2>

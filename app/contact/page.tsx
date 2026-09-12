@@ -16,9 +16,9 @@ import {
 import { Button } from "@/components/ui/Button";
 
 export const metadata: Metadata = {
-  title: "Contact SETU — Direct WhatsApp & Consultation Inquiry",
+  title: "Contact TechGrowX — Direct WhatsApp & Consultation Inquiry",
   description:
-    "Get in touch with the SETU engineering team. Chat directly on WhatsApp (+91 91092 65673), request a consultation, or send us a message.",
+    "Get in touch with the TechGrowX engineering team. Chat directly on WhatsApp (+91 91092 65673), request a consultation, or send us a message.",
 };
 
 export default function ContactPage() {
@@ -69,7 +69,7 @@ export default function ContactPage() {
                 <Button
                   variant="whatsapp"
                   size="md"
-                  href="https://wa.me/919109265673?text=Hi%20SETU%2C%20I%20would%20like%20to%20discuss%20a%20project%20for%20my%20business."
+                  href="https://wa.me/919109265673?text=Hi%20TechGrowX%2C%20I%20would%20like%20to%20discuss%20a%20project%20for%20my%20business."
                   isExternal
                   className="w-full font-bold shadow-sm"
                   leftIcon={<MessageCircle className="w-4 h-4" />}

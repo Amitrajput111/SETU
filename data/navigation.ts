@@ -27,7 +27,7 @@ export const FOOTER_INDUSTRIES: NavItem[] = [
 ];
 
 export const FOOTER_COMPANY: NavItem[] = [
-  { name: "About SETU", href: "/#about" },
+  { name: "About TechGrowX", href: "/#about" },
   { name: "5-Stage Delivery Process", href: "/#pricing" },
   { name: "Work & Concept Demos", href: "/#work" },
   { name: "Transparent Pricing", href: "/#pricing" },

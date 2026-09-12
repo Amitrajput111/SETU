@@ -3,7 +3,7 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Briefcase, Zap, GitMerge, TrendingUp } from "lucide-react";
 
-export const WhySetuSection: React.FC = () => {
+export const WhyTechGrowXSection: React.FC = () => {
   const principles = [
     {
       number: "01",

@@ -165,7 +165,7 @@ export default function WorkPage() {
                     <div>
                       <h3 className="text-xs font-bold uppercase tracking-wider text-teal-800 mb-2 flex items-center gap-1.5">
                         <CheckCircle2 className="w-4 h-4 text-teal-600" />
-                        <span>SETU Growth Strategy</span>
+                        <span>TechGrowX Growth Strategy</span>
                       </h3>
                       <div className="space-y-2">
                         {demo.strategyImplemented.map((s, i) => (

@@ -23,7 +23,7 @@ export const TopBanner: React.FC = () => {
           </Link>
           <span className="text-slate-600 hidden md:inline">|</span>
           <a
-            href="https://wa.me/919109265673?text=Hi%20SETU%2C%20I%20would%20like%20to%20connect."
+            href="https://wa.me/919109265673?text=Hi%20TechGrowX%2C%20I%20would%20like%20to%20connect."
             target="_blank"
             rel="noopener noreferrer"
             className="text-slate-400 hover:text-white transition-colors hidden md:inline"

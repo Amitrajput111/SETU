@@ -112,7 +112,7 @@ export const DEMO_PROJECTS: DemoProject[] = [
       heroSubheading: "Consult trusted specialists in Cardiology, Pediatrics, Orthopedics, and Gynecology. Transparent pricing, modern tech, zero waiting.",
       primaryCta: "Book Appointment on WhatsApp",
       secondaryCta: "View Specialist Doctors",
-      highlights: ["Top Medical Specialists", "Modern Diagnostic Setup", "Transparent Consultation Fees", "Zero-Wait Appointments"],
+      highlights: ["Top Medical Specialists", "Modern Diagnostic TechGrowXp", "Transparent Consultation Fees", "Zero-Wait Appointments"],
       sampleServices: [
         { name: "General Medicine & Consultation", price: "₹500 / Session", duration: "30 mins" },
         { name: "Cardiology Specialist Assessment", price: "₹1,200 onward", duration: "45 mins" },

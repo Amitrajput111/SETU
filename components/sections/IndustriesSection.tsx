@@ -51,7 +51,7 @@ export const IndustriesSection: React.FC = () => {
               icon={getIcon(ind.iconName)}
               subNiches={ind.subNiches}
               commonProblem={ind.commonProblem.points[0]}
-              setuSolution={ind.setuSolution.points[0]}
+              TechGrowXSolution={ind.TechGrowXSolution.points[0]}
               href={`/#work`}
               liveDemoUrl={ind.liveDemoUrl}
               ctaText={`Explore ${ind.title}`}

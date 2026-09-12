@@ -70,7 +70,7 @@ export const WhatsAppChatSimulator: React.FC = () => {
             <span>Interactive Experience</span>
           </div>
           <h2 className="text-2xl sm:text-4xl font-extrabold text-white">
-            Experience the SETU 24/7 WhatsApp AI Assistant
+            Experience the TechGrowX 24/7 WhatsApp AI Assistant
           </h2>
           <p className="text-xs sm:text-base text-slate-400">
             See how our automated triage engine answers customer inquiries in under 5 seconds, captures contact details, and books appointments while your team is busy.
@@ -125,7 +125,7 @@ export const WhatsAppChatSimulator: React.FC = () => {
                 </div>
                 <div>
                   <div className="text-xs font-bold text-white flex items-center gap-1.5">
-                    <span>SETU Verified Business AI</span>
+                    <span>TechGrowX Verified Business AI</span>
                     <CheckCheck className="w-3.5 h-3.5 text-blue-400" />
                   </div>
                   <div className="text-[10px] text-teal-400">Online · Instant Response Active</div>
@@ -155,7 +155,7 @@ export const WhatsAppChatSimulator: React.FC = () => {
                 <div className="flex justify-start">
                   <div className="bg-[#202c33] text-slate-300 rounded-2xl rounded-tl-none px-4 py-2.5 text-xs flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-teal-400 animate-pulse" />
-                    <span>SETU AI is typing response...</span>
+                    <span>TechGrowX AI is typing response...</span>
                   </div>
                 </div>
               ) : (
@@ -173,7 +173,7 @@ export const WhatsAppChatSimulator: React.FC = () => {
 
             {/* Input Bar */}
             <div className="p-3 bg-[#202c33] border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
-              <span>Automated conversation powered by SETU AI Engine</span>
+              <span>Automated conversation powered by TechGrowX AI Engine</span>
               <Link
                 href="/audit"
                 className="text-teal-400 hover:text-teal-300 font-bold inline-flex items-center gap-1"

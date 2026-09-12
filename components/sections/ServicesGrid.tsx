@@ -30,7 +30,7 @@ export const ServicesGrid: React.FC = () => {
       number: "01",
       title: "High-Performance Websites",
       category: "Web Infrastructure",
-      displayUrl: "system.setu.in/websites",
+      displayUrl: "system.TechGrowX.in/websites",
       shortDescription: "Custom Next.js web applications engineered for sub-second page loads, mobile responsiveness, and high conversion.",
       imageSrc: "/images/services/websites.jpg",
       capabilities: [
@@ -48,7 +48,7 @@ export const ServicesGrid: React.FC = () => {
       number: "02",
       title: "Local Growth & Google Maps",
       category: "Local Visibility",
-      displayUrl: "system.setu.in/local-seo",
+      displayUrl: "system.TechGrowX.in/local-seo",
       shortDescription: "Dominate the local 3-pack on Google Maps and search queries when nearby customers search for your services.",
       imageSrc: "/images/services/local-growth.jpg",
       capabilities: [
@@ -66,7 +66,7 @@ export const ServicesGrid: React.FC = () => {
       number: "03",
       title: "Social Presence & Branding",
       category: "Digital Trust",
-      displayUrl: "system.setu.in/branding",
+      displayUrl: "system.TechGrowX.in/branding",
       shortDescription: "Build a consistent, authoritative brand identity across Instagram, LinkedIn, and local social touchpoints.",
       imageSrc: "/images/services/social-presence.jpg",
       capabilities: [
@@ -84,7 +84,7 @@ export const ServicesGrid: React.FC = () => {
       number: "04",
       title: "Lead Systems & WhatsApp",
       category: "Conversion Funnels",
-      displayUrl: "system.setu.in/whatsapp-leads",
+      displayUrl: "system.TechGrowX.in/whatsapp-leads",
       shortDescription: "Turn casual visitors into qualified enquiries with frictionless 2-step capture and instant WhatsApp routing.",
       imageSrc: "/images/services/lead-generation.jpg",
       capabilities: [
@@ -102,7 +102,7 @@ export const ServicesGrid: React.FC = () => {
       number: "05",
       title: "AI Business Automation",
       category: "Workflow Automation",
-      displayUrl: "system.setu.in/ai-crm",
+      displayUrl: "system.TechGrowX.in/ai-crm",
       shortDescription: "Automate repetitive customer queries, calendar scheduling, and reminder workflows without hiring extra staff.",
       imageSrc: "/images/services/ai-automation.jpg",
       capabilities: [
@@ -265,7 +265,7 @@ export const ServicesGrid: React.FC = () => {
                         href={`/audit?service=${service.id}`}
                         className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-slate-900 hover:text-brand-accent transition-colors"
                       >
-                        <span>Audit Your Setup</span>
+                        <span>Audit Your TechGrowXp</span>
                         <ArrowRight className="w-3.5 h-3.5" />
                       </Link>
 
@@ -292,7 +292,7 @@ export const ServicesGrid: React.FC = () => {
                       </div>
 
                       <span className="text-[10px] font-mono text-teal-400 font-bold">
-                        SETU
+                        TechGrowX
                       </span>
                     </div>
 

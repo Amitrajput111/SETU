@@ -30,7 +30,7 @@ export default function HomePage() {
       {/* 06. 5-Stage Process & Transparent Pricing Packages */}
       <ProcessAndPricingHub />
 
-      {/* 07. About SETU & Engineering Leadership */}
+      {/* 07. About TechGrowX & Engineering Leadership */}
       <FounderSection />
 
       {/* 08. Frequently Asked Questions */}

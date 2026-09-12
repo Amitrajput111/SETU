@@ -16,7 +16,7 @@ export const FounderSection: React.FC = () => {
               <div className="relative aspect-video rounded-2xl overflow-hidden border border-slate-200 shadow-xs">
                 <Image
                   src="/images/workspace.jpg"
-                  alt="SETU Engineering Studio"
+                  alt="TechGrowX Engineering Studio"
                   fill
                   sizes="(max-width: 768px) 100vw, 40vw"
                   className="object-cover"
@@ -30,7 +30,7 @@ export const FounderSection: React.FC = () => {
               <div className="bg-slate-900 text-white rounded-2xl p-5 border border-slate-800 space-y-4 shadow-md">
                 <div className="flex items-center justify-between pb-3 border-b border-slate-800">
                   <div>
-                    <h3 className="font-bold text-sm text-white">SETU Engineering Leadership</h3>
+                    <h3 className="font-bold text-sm text-white">TechGrowX Engineering Leadership</h3>
                     <p className="text-[11px] text-teal-400">Direct Senior Architect Oversight</p>
                   </div>
                   <div className="flex items-center gap-2">
@@ -76,11 +76,11 @@ export const FounderSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Right: Why Business Owners Choose SETU */}
+            {/* Right: Why Business Owners Choose TechGrowX */}
             <div className="lg:col-span-7 space-y-5">
               <div>
                 <div className="text-xs font-bold uppercase tracking-wider text-brand-accent mb-1">
-                  Why Business Owners Choose SETU
+                  Why Business Owners Choose TechGrowX
                 </div>
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900 leading-tight">
                   Technology built to deliver real business revenue — not agency fluff.
@@ -88,7 +88,7 @@ export const FounderSection: React.FC = () => {
               </div>
 
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
-                SETU (&ldquo;Bridge&rdquo;) was founded with a single mission: to give growing local businesses the same sub-second website speed, automated WhatsApp booking, and Google Maps dominance previously reserved for venture-backed startups.
+                TechGrowX was founded with a single mission: to give growing local businesses the same sub-second website speed, automated WhatsApp booking, and Google Maps dominance previously reserved for venture-backed startups.
               </p>
 
               {/* 3 Value Pillars for Business Owners */}

@@ -16,16 +16,16 @@ export const WhatsAppFloatingButton: React.FC = () => {
       {isHovered && (
         <div className="hidden sm:flex items-center gap-2 bg-slate-900 text-white text-xs font-semibold px-3.5 py-2 rounded-xl shadow-xl border border-slate-800 animate-in fade-in slide-in-from-right-2 duration-150">
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-          <span>Chat with SETU Team</span>
+          <span>Chat with TechGrowX Team</span>
         </div>
       )}
 
       {/* Floating Action Button */}
       <a
-        href="https://wa.me/919109265673?text=Hi%20SETU%2C%20I%20would%20like%20to%20discuss%20growing%20my%20business."
+        href="https://wa.me/919109265673?text=Hi%20TechGrowX%2C%20I%20would%20like%20to%20discuss%20growing%20my%20business."
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Chat with SETU on WhatsApp"
+        aria-label="Chat with TechGrowX on WhatsApp"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         className={cn(
@@ -34,7 +34,7 @@ export const WhatsAppFloatingButton: React.FC = () => {
       >
         <span className="absolute top-0 right-0 w-3.5 h-3.5 rounded-full bg-emerald-400 border-2 border-white" />
         <MessageCircle className="w-6 h-6 fill-white" />
-        <span className="sr-only">Chat with SETU on WhatsApp</span>
+        <span className="sr-only">Chat with TechGrowX on WhatsApp</span>
       </a>
     </aside>
   );

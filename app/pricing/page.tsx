@@ -10,7 +10,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Pricing — Transparent Website & Automation Packages",
   description:
-    "Explore SETU's transparent starting tiers: Starter ₹10,000, Business ₹20,000, Growth ₹30,000+, and monthly care retainers from ₹5,000/mo.",
+    "Explore TechGrowX's transparent starting tiers: Starter ₹10,000, Business ₹20,000, Growth ₹30,000+, and monthly care retainers from ₹5,000/mo.",
 };
 
 export default function PricingPage() {
@@ -21,7 +21,7 @@ export default function PricingPage() {
       description: "Dedicated high-conversion treatment, trainer, or branch location landing page.",
     },
     {
-      name: "Multi-Location Google Business Setup",
+      name: "Multi-Location Google Business TechGrowXp",
       price: "₹4,500 / branch",
       description: "Complete GBP optimization and schema configuration for 2nd and 3rd branches.",
     },
@@ -32,7 +32,7 @@ export default function PricingPage() {
     },
     {
       name: "AI Knowledge Agent Custom Training",
-      price: "₹7,500 setup",
+      price: "₹7,500 TechGrowXp",
       description: "Trained on your comprehensive treatment documentation, doctor FAQs, and clinic policies.",
     },
   ];
@@ -50,7 +50,7 @@ export default function PricingPage() {
               Honest, Upfront Pricing Tiers
             </h1>
             <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-normal">
-              No hidden fees, no bloated agency retainers. Choose a fixed-scope setup package or continuous growth retainer tailored for your business stage.
+              No hidden fees, no bloated agency retainers. Choose a fixed-scope TechGrowXp package or continuous growth retainer tailored for your business stage.
             </p>
           </div>
         </Container>

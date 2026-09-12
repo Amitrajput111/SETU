@@ -13,24 +13,24 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "https://setu-platform-rust.vercel.app"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "https://TechGrowX-platform-rust.vercel.app"),
   title: {
-    default: "SETU — Digital Growth & Intelligent Automation",
-    template: "%s | SETU",
+    default: "TechGrowX — Digital Growth & Intelligent Automation",
+    template: "%s | TechGrowX",
   },
   description:
-    "SETU helps growing businesses build high-performance websites, generate leads and automate repetitive business processes.",
+    "TechGrowX helps growing businesses build high-performance websites, generate leads and automate repetitive business processes.",
   keywords: [
-    "SETU",
+    "TechGrowX",
     "Digital Growth Company",
     "High-Performance Business Websites",
     "WhatsApp Lead Automation",
     "Local SEO Google Business",
     "Business Process Automation",
   ],
-  authors: [{ name: "SETU", url: "https://setu-platform-rust.vercel.app" }],
-  creator: "SETU",
-  publisher: "SETU",
+  authors: [{ name: "TechGrowX", url: "https://TechGrowX-platform-rust.vercel.app" }],
+  creator: "TechGrowX",
+  publisher: "TechGrowX",
   formatDetection: {
     email: true,
     address: true,
@@ -39,18 +39,18 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://setu-platform-rust.vercel.app",
-    title: "SETU — Digital Growth & Intelligent Automation",
+    url: "https://TechGrowX-platform-rust.vercel.app",
+    title: "TechGrowX — Digital Growth & Intelligent Automation",
     description:
-      "SETU helps growing businesses build high-performance websites, generate leads and automate repetitive business processes.",
-    siteName: "SETU",
+      "TechGrowX helps growing businesses build high-performance websites, generate leads and automate repetitive business processes.",
+    siteName: "TechGrowX",
   },
   twitter: {
     card: "summary_large_image",
-    title: "SETU — Digital Growth & Intelligent Automation",
+    title: "TechGrowX — Digital Growth & Intelligent Automation",
     description:
-      "SETU helps growing businesses build high-performance websites, generate leads and automate repetitive business processes.",
-    creator: "@setugrowth",
+      "TechGrowX helps growing businesses build high-performance websites, generate leads and automate repetitive business processes.",
+    creator: "@techgrowx",
   },
   robots: {
     index: true,
@@ -73,11 +73,11 @@ export default function RootLayout({
   const jsonLdOrg = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "SETU",
-    legalName: "SETU Digital Growth & Automation",
-    url: "https://setu-platform-rust.vercel.app",
+    name: "TechGrowX",
+    legalName: "TechGrowX Digital Growth & Automation",
+    url: "https://TechGrowX-platform-rust.vercel.app",
     description:
-      "SETU helps growing businesses build high-performance websites, generate leads and automate repetitive business processes.",
+      "TechGrowX helps growing businesses build high-performance websites, generate leads and automate repetitive business processes.",
     sameAs: [
       "https://linkedin.com",
       "https://github.com",

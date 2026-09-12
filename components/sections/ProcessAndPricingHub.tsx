@@ -69,7 +69,7 @@ export const ProcessAndPricingHub: React.FC = () => {
   const pricingTiers = [
     {
       id: "starter",
-      name: "Starter Setup",
+      name: "Starter TechGrowXp",
       price: "₹10,000",
       tagline: "For businesses wanting a lightning-fast, modern digital presence.",
       highlightBadge: "Sub-Second Next.js",
@@ -202,7 +202,7 @@ export const ProcessAndPricingHub: React.FC = () => {
                         {tier.price}
                       </div>
                       <div className="text-[11px] text-slate-400 mt-1 font-medium">
-                        One-time setup · 100% transparent scope
+                        One-time TechGrowXp · 100% transparent scope
                       </div>
                     </div>
 

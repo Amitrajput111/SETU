@@ -16,29 +16,29 @@ export const RoiCalculator: React.FC = () => {
       name: "Healthcare & Clinic",
       avgDeal: 800,
       currentConvRate: 0.15,
-      setuConvRate: 0.38,
+      TechGrowXConvRate: 0.38,
       savedHoursPerLead: 0.35,
     },
     gym: {
       name: "Fitness & Luxury Gym",
       avgDeal: 3500,
       currentConvRate: 0.12,
-      setuConvRate: 0.35,
+      TechGrowXConvRate: 0.35,
       savedHoursPerLead: 0.25,
     },
     academy: {
       name: "Coaching & Academy",
       avgDeal: 25000,
       currentConvRate: 0.08,
-      setuConvRate: 0.22,
+      TechGrowXConvRate: 0.22,
       savedHoursPerLead: 0.45,
     },
   };
 
   const currentConfig = presets[industry];
   const currentConversions = Math.round(monthlyInquiries * currentConfig.currentConvRate);
-  const setuConversions = Math.round(monthlyInquiries * currentConfig.setuConvRate);
-  const additionalClients = Math.max(1, setuConversions - currentConversions);
+  const TechGrowXConversions = Math.round(monthlyInquiries * currentConfig.TechGrowXConvRate);
+  const additionalClients = Math.max(1, TechGrowXConversions - currentConversions);
   const savedHours = Math.round(monthlyInquiries * currentConfig.savedHoursPerLead);
   const projectedRevenueGain = additionalClients * currentConfig.avgDeal;
 
@@ -48,7 +48,7 @@ export const RoiCalculator: React.FC = () => {
         <SectionHeading
           eyebrow="Interactive ROI Estimator"
           title="See how much revenue your business is currently leaving on the table."
-          description="Calculate your projected lead surge, monthly hours saved, and extra client conversions powered by SETU digital infrastructure."
+          description="Calculate your projected lead surge, monthly hours saved, and extra client conversions powered by TechGrowX digital infrastructure."
           className="max-w-3xl"
         />
 
@@ -125,7 +125,7 @@ export const RoiCalculator: React.FC = () => {
               <div className="p-4 rounded-2xl bg-white border border-slate-200/90 space-y-2 text-xs text-slate-600">
                 <div className="flex items-center gap-2 font-bold text-slate-900">
                   <Sparkles className="w-4 h-4 text-brand-accent" />
-                  <span>The SETU Automation Difference:</span>
+                  <span>The TechGrowX Automation Difference:</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-3.5 h-3.5 text-teal-600 shrink-0" />
@@ -187,7 +187,7 @@ export const RoiCalculator: React.FC = () => {
                 </div>
                 <div className="text-right">
                   <span className="inline-block px-2.5 py-1 rounded-md bg-teal-500/20 text-teal-300 text-xs font-mono font-bold border border-teal-500/40">
-                    +{Math.round(((setuConversions - currentConversions) / (currentConversions || 1)) * 100)}% ROI
+                    +{Math.round(((TechGrowXConversions - currentConversions) / (currentConversions || 1)) * 100)}% ROI
                   </span>
                 </div>
               </div>

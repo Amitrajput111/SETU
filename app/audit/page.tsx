@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Free Digital Presence Audit — SETU Client Acquisition System",
+  title: "Free Digital Presence Audit — TechGrowX Client Acquisition System",
   description:
     "Request a free 100% actionable digital presence audit. We inspect your Google Maps ranking, mobile speed, conversion bottlenecks, and WhatsApp lead flow.",
 };

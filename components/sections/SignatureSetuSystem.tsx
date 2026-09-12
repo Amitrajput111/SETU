@@ -4,7 +4,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Search, Globe, UserCheck, Bot, Calendar, Star, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
-export const SignatureSetuSystem: React.FC = () => {
+export const SignatureTechGrowXSystem: React.FC = () => {
   const stages = [
     {
       number: "01",

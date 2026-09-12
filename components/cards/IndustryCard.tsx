@@ -11,7 +11,7 @@ export interface IndustryCardProps {
   icon: React.ReactNode;
   subNiches: string[];
   commonProblem: string;
-  setuSolution: string;
+  TechGrowXSolution: string;
   href: string;
   liveDemoUrl?: string;
   ctaText?: string;
@@ -25,7 +25,7 @@ export const IndustryCard: React.FC<IndustryCardProps> = ({
   icon,
   subNiches,
   commonProblem,
-  setuSolution,
+  TechGrowXSolution,
   href,
   liveDemoUrl,
   ctaText = "View Industry Blueprint",
@@ -113,9 +113,9 @@ export const IndustryCard: React.FC<IndustryCardProps> = ({
           <div className="p-3 rounded-xl bg-teal-50/60 border border-teal-100 text-xs space-y-1">
             <div className="font-bold text-teal-900 flex items-center gap-1.5 text-[10px] uppercase tracking-wider">
               <CheckCircle2 className="w-3 h-3 text-teal-600 shrink-0" />
-              <span>SETU Solution:</span>
+              <span>TechGrowX Solution:</span>
             </div>
-            <p className="text-slate-700 leading-relaxed font-medium">{setuSolution}</p>
+            <p className="text-slate-700 leading-relaxed font-medium">{TechGrowXSolution}</p>
           </div>
         </div>
 
